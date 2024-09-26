@@ -4,6 +4,11 @@ export const routes: Routes = [
     {
         path: '',
         title: 'Login',
-        loadComponent: () => import('./pages/login/login.component')
+        loadComponent: () => import('./auth/login/login.component')
+    },
+    {
+        path: 'modulos',
+        title: 'Modulos',
+        loadComponent: () => import('./pages/moduls/moduls.component')
     }
 ];
