@@ -26,7 +26,7 @@
                 <h1 class="text-white text-lg">Presupuesto</h1>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
                     <!-- In use -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
+                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden" (click)="moveToModul()">
                         <div class="flex flex-col items-center space-y-2">
                             <div class="text-6xl font-bold tracking-tight leading-none text-blue-500">21</div>
                             <div class="text-lg font-medium text-blue-500">In use</div>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <!-- renovation -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
+                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden" >
                         <div class="flex flex-col items-center space-y-2">
                             <div class="text-6xl font-bold tracking-tight leading-none text-amber-500">17</div>
                             <div class="text-lg font-medium text-amber-600">Under renovation</div>
@@ -83,6 +83,53 @@
                             <div class="text-6xl font-bold tracking-tight leading-none text-primary-900">38</div>
                             <div class="text-lg font-medium text-primary-900">Closed</div>
                         </div>
+                    </div>
+                </div>
+                <div class="w-full max-w-md mx-auto mb-6">
+                    <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-2 bg-purple-200 rounded-sm h-32 w-32">
+                                <!-- Icon from Heroicons (https://heroicons.com/) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a2 2 0 00-2-2h-3v4z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 15V7a2 2 0 012-2h10a2 2 0 012 2v8" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 15v4a2 2 0 002 2h3v-4" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 15h16" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="flex text-gray-900 text-2xl font-semibold ">ING. BENITO MORALES</div>
+                                <div class="flex items-center space-x-2">
+
+                                    <mat-icon class="w-6 h-6">home</mat-icon>
+                                    <h3 class="font-medium">Director DGT</h3>
+                                
+                                    <mat-icon class="material-symbols-outlined w-6 h-6">alarm</mat-icon>
+                                    <h3 class="font-medium">Salida</h3>
+                                </div>
+                               
+                                <div class="flex items-center space-x-2">
+
+                                    <div class="bg-[#F8F839] text-center  px-2 shadow-lg text-white text-md font-semibold rounded-full inline-block">Solicitud en espera</div>
+                                    <div class="bg-white p-2 rounded-full shadow-xl text-sm flex items-center justify-center w-auto h-auto ">
+                                        <mat-icon class="text-blue-400">visibility</mat-icon>
+                                    </div>
+                                    <div class="bg-white p-2 rounded-full shadow-xl text-sm flex items-center justify-center w-auto h-auto ">
+                                        <mat-icon class="text-green-500">edit</mat-icon>
+                                    </div>
+                                </div>
+
+                                <div class="flex space-x-2 mt-4">
+                                    <mat-icon class="w-6 h-6">directions_car</mat-icon>
+                                    <h3 class="font-bold">
+                                        Destino: <span class="font-normal">Villa Libertad Farmacia 1/2 abajo 10 andenes tope sur contigua zapatería</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full text-white bg-[#212049] hover:bg-purple-200 text-sm py-2 px-4 rounded-md transition duration-300 ease-in-out">
+                           Aprobar Solicitud
+                        </button>
                     </div>
                 </div>
             </section>
@@ -118,34 +165,5 @@
             </div>
             </div> -->
 
-            <div class="max-w-sm mx-auto my-10">
-                <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="p-2 bg-purple-200 rounded-sm h-16 w-16">
-                            <!-- Icon from Heroicons (https://heroicons.com/) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a2 2 0 00-2-2h-3v4z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 15V7a2 2 0 012-2h10a2 2 0 012 2v8" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 15v4a2 2 0 002 2h3v-4" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 15h16" />
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="text-gray-900 text-2xl font-semibold inline-block">ING. BENITO MORALES</div>
-                            <div class="">
-                                
-                                <i></i>
-                                <h3>Director DGT</h3>
-                            </div>
-                            <div class="">
-                                <i></i>
-                                <h3>Salida</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="w-full text-purple-600 bg-purple-100 hover:bg-purple-200 text-sm py-2 px-4 rounded-md transition duration-300 ease-in-out">
-                        View all
-                    </button>
-                </div>
-            </div>
+            
 </section>
