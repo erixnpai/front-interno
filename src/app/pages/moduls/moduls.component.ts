@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-moduls',
@@ -10,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export default class ModulsComponent {
 
+  //Injectar el Router
+ private readonly router=  inject(Router);
+
+  moveToModul(){
+this.router.navigate(['/Transporte']);
+  }
 }
