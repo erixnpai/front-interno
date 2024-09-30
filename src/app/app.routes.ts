@@ -13,7 +13,7 @@ import { Routes } from '@angular/router';
     },
     {
         path: 'Transporte',
-        title: 'Modulos',
+        title: 'Transporte',
         loadComponent: () => import('./pages/modulos/transporte/transporte-layout/transporte-layout.component'),
         loadChildren:() => import("./pages/modulos/router_transporte")
     },
