@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios-service.service';
 
 @Component({
   selector: 'app-solicitar-transporte',
@@ -9,13 +10,13 @@ import { Component } from '@angular/core';
 })
 export default class SolicitarTransporteComponent {
 
-  constructor(){
+  constructor(private readonly usuario_service: UsuariosService){
     console.log('SolicitarTransporteComponent');
   }
 
 
   getPersonaEncargado(){
-    
+
   }
 
 }
