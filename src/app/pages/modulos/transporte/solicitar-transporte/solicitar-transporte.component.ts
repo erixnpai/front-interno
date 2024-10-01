@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export default class SolicitarTransporteComponent {
 
+  constructor(){
+    console.log('SolicitarTransporteComponent');
+  }
+
+
+  getPersonaEncargado(){
+    
+  }
+
 }
