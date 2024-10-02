@@ -1,0 +1,178 @@
+<div class="p-6 bg-white border border-gray-200 rounded-lg shadow ">
+    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg font-bold">
+        <!-- {{
+        id_institucion_usuario == 1
+          ? "Sedes de las Instituciones de Educación Superior"
+          : "Sedes de la "+titulo_institucion
+      }} -->
+
+        SOLICITAR TRANSPORTE
+    </h2>
+ 
+    <div class="px-6 pt-3 flex justify-end flex-row">
+        <p>
+            Estado:
+            <span
+                class="rounded bg-blue-500 px-7 pb-3 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                En espera
+                <svg fill="#ffffff" width="1.9rem" height="2rem" viewBox="0 0 32 32" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     class="ml-2 inline-block align-middle">
+                    <title></title>
+                    <path d='M26.61,2H10.74a2.9,2.9,0,0,0-.6.07A7.14,7.14,0,0,0,9.21,2,6.62,6.62,0,0,0,7.94,15.12V27.2a2.81,2.81,0,0,0,2.8,2.8H26.61a2.8,2.8,0,0,0,2.8-2.8V4.8A2.8,2.8,0,0,0,26.61,2ZM4.46,8.62a4.76,4.76,0,1,1,4.75,4.76A4.75,4.75,0,0,1,4.46,8.62ZM27.54,27.2a.93.93,0,0,1-.93.93H10.74a.93.93,0,0,1-.93-.93v-12a6.56,6.56,0,0,0,4.14-2,1,1,0,0,0,.24,0h9a.87.87,0,1,0,0-1.74h-8a6.6,6.6,0,0,0-1.34-7.67h12.8a.93.93,0,0,1,.93.93Z'/>
+                    <path d='M12.2,6.41a.92.92,0,0,0-1.32,0L8.44,8.86,7.54,8A.93.93,0,1,0,6.22,9.28l1.56,1.56a.93.93,0,0,0,.66.27,1,1,0,0,0,.66-.27l3.1-3.11A.92.92,0,0,0,12.2,6.41Z'/>
+                    <path d='M23.16,15.13h-9a.87.87,0,0,0,0,1.74h9a.87.87,0,1,0,0-1.74Z'/>
+                    <path d='M23.16,18.72h-9a.87.87,0,1,0,0,1.74h9a.87.87,0,0,0,0-1.74Z'/>
+                </svg>
+            </span>
+        </p>
+    </div>
+    
+    <div>
+        <div class="relative shadow-md sm:rounded-lg">
+            <!-- tabla------------------------------------------------------------ -->
+            <div class="pb-5">
+
+                <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Dirigido a
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="text"
+                            placeholder="Nombre de a quien va dirigido" />
+                    </div>
+
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Cargo del solicitado
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="text"
+                            placeholder="Cargo del solicitado" />
+                    </div>
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Solicitante
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="text"
+                            placeholder="Nombre del solicitante" />
+
+                    </div>
+
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Cargo del solicitante
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="text"
+                            placeholder="Cargo del solicitante" />
+
+                    </div>
+                </div>
+
+
+                <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-3 space-y-2">
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Fecha de la solicitud
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="date" />
+
+                    </div>
+
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Hora de salida
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required id="DuracionPrograma" type="time" />
+
+                    </div>
+
+
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Hora de regreso
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            required autocomplete="off" id="DuracionPrograma" type="time" />
+
+                    </div>
+
+                </div>
+
+                <div class="px-8 mt-2 ml-8">
+                    <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                        for="DuracionPrograma">
+                        Destino
+                        <span class="text-red-500">*</span>
+                    </label>
+                    <!-- <input
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        required autocomplete="off" id="DuracionPrograma" type="text"
+                        placeholder="Duración del Programa en horas" /> -->
+
+
+                    <textarea name="" id=""
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
+
+                </div>
+
+
+                <div class="px-8 mt-2 ml-8">
+                    <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                        for="DuracionPrograma">
+                        Justificacion de la solicitud
+                        <span class="text-red-500">*</span>
+                    </label>
+                    <!-- <input
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        required autocomplete="off" id="DuracionPrograma" type="text"
+                        placeholder="Duración del Programa en horas" /> -->
+
+
+                    <textarea name="" id=""
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
+
+                </div>
+                <div class="px-6 pt-3 flex justify-end">
+                    <button
+                        class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                        <span class="mx-1">Solicitar</span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
