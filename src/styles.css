@@ -2,3 +2,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.main-app {
+    display: flex;
+    height: 100vh;
+}
+
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: .9rem;
+
+}
+
+
+.main-sidebard {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    background-color: #001E53;
+    height: 100vh;
+    padding: 1rem;
+    width: 20.5rem;
+}
+
+
+.main-dash3 {
+    width: 100%;
+    padding: 2rem;
+    overflow-x: hidden;
+    background-image: url("./assets/logocnu.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    background-color: #ffffff;
+}
