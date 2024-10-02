@@ -3,6 +3,7 @@ import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios.se
 
 
 
+
 @Component({
   selector: 'app-solicitar-transporte',
   standalone: true,
@@ -12,17 +13,19 @@ import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios.se
 })
 export default class SolicitarTransporteComponent {
 
-  constructor(private readonly usuario_service: UsuariosService,) {
+  constructor(private  usuarioService: UsuariosService,) {
     
 
     this.getPersonaEncargado();
   }
 
 
-  getPersonaEncargado() {
-    console.log('SolicitarTransporteComponent');
+  async getPersonaEncargado() {
+    // console.log('SolicitarTransporteComponent');
 
-    this.usuario_service
+    const data = await this.usuarioService.get_EncargadoService().toPromise();
+    console.log(data);
+    
   }
 
 }
