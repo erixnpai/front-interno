@@ -18,6 +18,11 @@ import { Routes } from '@angular/router';
         loadChildren:() => import("./pages/modulos/transporte/router_transporte")
     },
     {
+        path: 'dashboard',
+        title: 'Dashboard',
+        loadComponent: () => import('./pages/dashboard/dashboard.component')
+    },
+    {
         path: '**',
         redirectTo: '/',
         pathMatch: 'full',

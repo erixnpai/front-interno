@@ -1,10 +1,12 @@
 
 import { Injectable } from '@angular/core';
-import { ErrorService } from '../error/error.service';
+
 import { catchError, Observable, retry } from 'rxjs';
-import { Dictionary_Url } from '../../utils/Dictionary_Url';
+
 import { UsuariosUrl } from './usuarios-url';
 import { HttpClient } from '@angular/common/http';
+import { Dictionary_Url } from '../../../utils/Dictionary_Url';
+import { ErrorService } from '../../error/error.service';
 
 @Injectable({
   providedIn: 'root'
