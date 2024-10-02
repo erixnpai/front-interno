@@ -10,5 +10,10 @@ export const routes: Routes = [
         path: 'modulos',
         title: 'Modulos',
         loadComponent: () => import('./pages/moduls/moduls.component')
+    },
+    {
+        path: 'dashboard',
+        title: 'Dashboard',
+        loadComponent: () => import('./pages/dashboard/dashboard.component')
     }
 ];
