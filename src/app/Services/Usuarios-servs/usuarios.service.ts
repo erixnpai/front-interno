@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { ErrorService } from '../error/error.service';
-import { catchError, retry } from 'rxjs';
+import { catchError, Observable, retry } from 'rxjs';
 import { Dictionary_Url } from '../../utils/Dictionary_Url';
 import { UsuariosUrl } from './usuarios-url';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class UsuariosService {
 
   private getEncargado = new Dictionary_Url().url_Transporte + new UsuariosUrl().get_PersonaEncargadoTransporte;
 
-  get_EncargadoService() {
-    return this.http.get(this.getEncargado)
-      .pipe(retry(), catchError(this.error.handleError));
+  get_EncargadoService(): Observable<any> {
+    // console.log(this.getEncargado);
+    return this.http.get<any>(this.getEncargado)
+      .pipe(retry(1), catchError(this.error.handleError));
   }
 }

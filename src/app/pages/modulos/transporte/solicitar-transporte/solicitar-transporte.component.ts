@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios.service';
+
 
 
 
@@ -12,17 +13,24 @@ import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios.se
 })
 export default class SolicitarTransporteComponent {
 
-  constructor(private readonly usuario_service: UsuariosService,) {
-    
+  //Datos del encargado
+  encargadoObj = signal({ "nombre": "", "apellido": "", "cedula": "", "telefono": "", "correo": "" });
 
+
+  //Datos de la persona que solicita el transporte
+  solicitanteObj = signal({ "nombre": "", "apellido": "", "cedula": "", "telefono": "", "correo": "" });
+
+  constructor(private  usuarioService: UsuariosService,) {
     this.getPersonaEncargado();
   }
 
 
-  getPersonaEncargado() {
-    console.log('SolicitarTransporteComponent');
+  async getPersonaEncargado() {
+    // console.log('SolicitarTransporteComponent');
 
-    this.usuario_service
+    const data = await this.usuarioService.get_EncargadoService().toPromise();
+    console.log(data);
+    
   }
 
 }
