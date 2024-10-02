@@ -1,0 +1,85 @@
+<div class="p-6 bg-white border border-gray-200 rounded-lg shadow ">
+    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg font-bold">
+        <!-- {{
+        id_institucion_usuario == 1
+          ? "Sedes de las Instituciones de Educación Superior"
+          : "Sedes de la "+titulo_institucion
+      }} -->
+
+        HISTORIAL TRANSPORTE
+    </h2>
+    <button></button>
+
+    <div>
+        <div class="relative shadow-md sm:rounded-lg">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between pb-2">
+                    <div class="relative mt-4 md:mt-0">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg class="w-5 h-5 text-[#A9A9A9]" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        <input type="text"
+                            class="w-full py-2 pl-10 pr-4  bg-white border border-[#A9A9A9] rounded-lg  dark:text-black focus:border-[#0F2167] focus:outline-none"
+                            placeholder="Buscar">
+                    </div>
+                </div>
+            </div>
+            <!-- tabla------------------------------------------------------------ -->
+            <div class="max-h-[500px] overflow-y-auto scrollbar-hide">
+                <div class="flex flex-col mt-6 divide-y overflow-hidden border border-gray-200 dark:border-gray-700 rounded-lg  ">
+                    <div class="overflow-y-auto scrollbar-hide" style="max-height: 500px; ">
+                        <table class="min-w-full  ">
+                            <thead class="bg-[#001E53] sticky top-0 text-white text-[14px] md:text-lg uppercase font-medium text-left rtl:text-right">
+                                <tr>
+                                  <th class="px-4 py-4">#</th>
+                                  <th class="px-4 py-4">Nombre del Solicitante</th>
+                                  <th class="px-4 py-4">Nombre del Solicitado</th>
+                                  <th class="px-4 py-4">Cargo del solicitante</th>
+                                  <th class="px-4 py-4">Fecha</th>
+                                  <th class="px-4 py-4">Hora de salida</th>
+                                  <th class="px-4 py-4">Estado</th>
+                                </tr>
+                              </thead>
+                            <tbody class="bg-white divide-y divide-gray-900">
+
+                                <tr class="font-bold uppercase text-gray-800 text-[12px] md:text-xl">
+                                  <td class="px-4">
+                                    <div class="">1</div>
+                                  </td>
+                                  <td class="px-4">
+                                    <div class="px-3 py-1 text-[12px] md:text-lg rounded-full text-white bg-[#001E53]">Ing. Benito Morales</div>
+                                  </td>
+                                  <td class="px-4">
+                                    <div>Ing. Jorge Cruz Parralez</div>
+                                  </td>
+                                  <td class="px-4">
+                                    <div>Dgt</div>
+                                  </td>
+                                  <td class="px-4">
+                                    <div>14/08/2024</div>
+                                  </td>
+                                  <td class="px-4">
+                                    <div>10:00 pm</div>
+                                  </td>
+                                  <td class="px-4 py-4 ">
+                                    <button class="w-full h-8 bg-[#BABFB8] text-[#212049] rounded-lg">
+                                        Hecha
+                                    </button>
+                                  </td>
+                                </tr>
+
+                            </tbody>
+                          </table>
+                    
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
