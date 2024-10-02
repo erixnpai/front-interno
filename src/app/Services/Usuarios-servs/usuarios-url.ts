@@ -1,3 +1,3 @@
 export class UsuariosUrl {
-    public get_PersonaEncargadoTransporte: string = "encargado-transporte";
+    public get_PersonaEncargadoTransporte: string = "/encargado/encargado-transporte";
 }

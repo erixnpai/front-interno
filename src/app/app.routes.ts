@@ -15,7 +15,7 @@ import { Routes } from '@angular/router';
         path: 'Transporte',
         title: 'Transporte',
         loadComponent: () => import('./pages/modulos/transporte/transporte-layout/transporte-layout.component'),
-        loadChildren:() => import("./pages/modulos/router_transporte")
+        loadChildren:() => import("./pages/modulos/transporte/router_transporte")
     },
     {
         path: 'dashboard',
