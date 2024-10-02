@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { UsuariosService } from '../../../../Services/Usuarios-servs/usuarios.service';
+import { UsuariosService } from '../../../../Services/Transporte/Usuarios-servs/usuarios.service';
+
 
 
 
