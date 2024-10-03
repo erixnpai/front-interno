@@ -1,7 +1,7 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import  SidebarComponent  from '../../Components/sidebar/sidebar.component';
+import  SidebarComponent  from '../modulos/presupuesto/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard',

@@ -17,3 +17,14 @@
 .group:hover .group-hover\\:visible { visibility: visible; }
 .group:hover .group-hover\\:opacity-100 { opacity: 1; }
 .group:hover .group-hover\\:translate-x-0 { transform: translateX(0); }
+
+.bg-vacio{
+    background-image: url('/assets/layout.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; /* Altura total del viewport */
+    margin: 0;
+    padding: 0;
+}

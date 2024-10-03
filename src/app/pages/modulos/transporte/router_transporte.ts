@@ -17,6 +17,7 @@ export  const RouterTransporte: Routes = [
         title: 'Historial Transporte',
         loadComponent: () => import('./historial-transporte/historial-transporte.component')
     },
+    
 ];
 
 export default RouterTransporte;
