@@ -20,7 +20,8 @@ import { Routes } from '@angular/router';
     {
         path: 'dashboard',
         title: 'Dashboard',
-        loadComponent: () => import('./pages/dashboard/dashboard.component')
+        loadComponent: () => import('./pages/modulos/presupuesto/sidebar/sidebar.component'),
+        loadChildren:() => import("./pages/modulos/presupuesto/presupuestos.routes")
     },
     {
         path: '**',

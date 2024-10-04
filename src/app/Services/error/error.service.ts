@@ -22,7 +22,7 @@ export class ErrorService {
       errorDetails.message = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
 
-    console.error('Error details:', errorDetails);
+    // console.error('Error details:', errorDetails);
     return throwError(() => errorDetails);
   }
 }
