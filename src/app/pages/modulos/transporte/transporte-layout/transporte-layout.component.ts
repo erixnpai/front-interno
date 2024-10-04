@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from "@angular/material/icon";
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
 
 
 @Component({
@@ -13,5 +13,16 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   styleUrl: './transporte-layout.component.css'
 })
 export default class TransporteLayoutComponent {
+
+  private router = inject(Router);
+
+
+
+  cerrarSesion() {
+    console.log('Cerrar Sesion');
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/']);
+  }
 
 }
