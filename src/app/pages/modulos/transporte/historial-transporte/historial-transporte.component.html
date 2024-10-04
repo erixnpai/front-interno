@@ -1,12 +1,6 @@
 <div class="p-6 bg-white border border-gray-200 rounded-lg shadow ">
     <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg font-bold">
-        <!-- {{
-        id_institucion_usuario == 1
-          ? "Sedes de las Instituciones de Educación Superior"
-          : "Sedes de la "+titulo_institucion
-      }} -->
-
-        HISTORIAL TRANSPORTE
+      HISTORIAL TRANSPORTE
     </h2>
     <button></button>
 
@@ -67,7 +61,7 @@
                                     <div>10:00 pm</div>
                                   </td>
                                   <td class="px-4 py-4 ">
-                                    <button class="w-full h-8 bg-[#BABFB8] text-[#212049] rounded-lg">
+                                    <button (click)="openDialog()" class="w-full h-8 bg-[#BABFB8] text-[#212049] rounded-lg">
                                         Hecha
                                     </button>
                                   </td>
