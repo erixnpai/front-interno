@@ -7,3 +7,5 @@ export  const RouterPresupuestos: Routes = [
         loadComponent: () => import('../../../Components/layout/layout.component')
     }
 ]
+
+export default RouterPresupuestos;
