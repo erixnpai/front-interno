@@ -31,60 +31,54 @@ export default class LoginComponent {
 
 
   async login() {
-    /*   */
-
+    // Verificar si el formulario es inválido
     if (!this.loginForm.valid) {
-
-      SweetAlert.showerror("Todos los campos son obligatorios")
+      SweetAlert.showerror("Todos los campos son obligatorios");
       return;
     }
-
 
     try {
       const formLoginData = this.loginForm.value;
       const resp = await this.srv_login.loginUser(formLoginData).toPromise();
-      /*     console.log(resp.status); */
 
       console.log(resp);
 
-
-      if (resp.acceso == false) {
-        SweetAlert.showerror2(resp.message)
+      // Verificar si el acceso fue denegado
+      if (!resp.acceso) {
+        SweetAlert.showerror(resp.message || "Acceso denegado");
         return;
       }
 
+      // Verificar si la respuesta tiene un status negativo
       if (!resp.status) {
-        SweetAlert.showerror(resp.message)
+        SweetAlert.showerror(resp.message || "Error en la autenticación");
         return;
       }
 
+      // Si la autenticación es exitosa
       if (resp.auth) {
-
         const user: any = Jwt_decoder.verificar_jwt(resp.t1);
-        // Verificar si hay un payload en el token
-        // console.log(user);
 
-
+        // Verificar si el token decodificado contiene el usuario
         if (!user || !user.Usser) {
-          SweetAlert.showerror('Usuario o contraseña incorrectos');
+          SweetAlert.showerror("Usuario o contraseña incorrectos");
           return;
         }
 
-        const sessionEndTime = Date.now() + 86400000;
+        // Guardar la sesión por 24 horas
+        const sessionEndTime = Date.now() + 86400000; // 24 horas en milisegundos
         sessionStorage.setItem('sessionEndTime', sessionEndTime.toString());
         sessionStorage.setItem("t1", resp.t1);
+
+        // Redirigir al usuario a la página de inicio
         this.router.navigate(['/rally/']);
-        return;
       }
-    } catch (error) {
-      SweetAlert.showerror(resp.message)
-      return;
-
+    } catch (error: any) {
+      // Manejo del error general
+      SweetAlert.showerror(error.message || "Error en el servidor. Intente nuevamente.");
     }
-
-
-
   }
+
 
   // clickModulos() {
   //   this.router.navigate(['/modulos']);
