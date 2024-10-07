@@ -31,180 +31,181 @@
 
     <div>
         <form [formGroup]="formSolicitarTransporte">
-        <div class="relative shadow-md sm:rounded-lg">
+            <div class="relative shadow-md sm:rounded-lg">
 
-            <div class="pb-5">
+                <div class="pb-5">
 
-                <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
+                    <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Dirigido a
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="text"
+                                formControlName="encargadoTransporte" placeholder="Nombre de a quien va dirigido" />
+                        </div>
+
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Cargo del solicitado
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="text"
+                                formControlName="cargoEncargado" placeholder="Cargo del solicitado" />
+                        </div>
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Solicitante
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="text"
+                                formControlName="nombreSolicitante" placeholder="Nombre del solicitante" />
+
+                        </div>
+
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Cargo del solicitante
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="text"
+                                formControlName="cargoSolicitante" placeholder="Cargo del solicitante" />
+
+                        </div>
+                    </div>
+
+
+                    <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Fecha de la solicitud
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="date"
+                                formControlName="fechaSolicitud" />
+
+
+                        </div>
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Cantidad de Personas
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="number"
+                                formControlName="cantidadPersonas" />
+
+                        </div>
+
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Hora de salida
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required id="DuracionPrograma" type="time" formControlName="horaSalidaSolicitud" />
+
+                        </div>
+
+
+                        <div class="px-8 mt-2 ml-8">
+                            <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                for="DuracionPrograma">
+                                Hora de regreso
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                required autocomplete="off" id="DuracionPrograma" type="time"
+                                formControlName="horaRegresoSolicitud" />
+
+                        </div>
+
+
+
+
+
+                    </div>
 
                     <div class="px-8 mt-2 ml-8">
                         <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                             for="DuracionPrograma">
-                            Dirigido a
+                            Destino
                             <span class="text-red-500">*</span>
                         </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="text"
-                            formControlName="encargadoTransporte"
-                            placeholder="Nombre de a quien va dirigido" />
-                    </div>
-
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Cargo del solicitado
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="text"
-                            placeholder="Cargo del solicitado" />
-                    </div>
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Solicitante
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="text"
-                            formControlName="nombreSolicitante"
-                            placeholder="Nombre del solicitante" />
-
-                    </div>
-
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Cargo del solicitante
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="text"
-                            formControlName="cargoSolicitante"
-                            placeholder="Cargo del solicitante" />
-
-                    </div>
-                </div>
-
-
-                <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Fecha de la solicitud
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="date" />
-
-                    </div>
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Cantidad de Personas
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="time" />
-
-                    </div>
-
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Hora de salida
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required id="DuracionPrograma" type="time" />
-
-                    </div>
-
-
-                    <div class="px-8 mt-2 ml-8">
-                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                            for="DuracionPrograma">
-                            Hora de regreso
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            required autocomplete="off" id="DuracionPrograma" type="time" />
-
-                    </div>
-
-                   
-
-
-
-                </div>
-
-                <div class="px-8 mt-2 ml-8">
-                    <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                        for="DuracionPrograma">
-                        Destino
-                        <span class="text-red-500">*</span>
-                    </label>
-                    <!-- <input
+                        <!-- <input
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                         required autocomplete="off" id="DuracionPrograma" type="text"
                         placeholder="Duración del Programa en horas" /> -->
 
 
-                    <textarea name="" id=""
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
+                        <textarea name="" id=""
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            formControlName="destinoSolicitud"></textarea>
 
-                </div>
+                    </div>
 
 
-                <div class="px-8 mt-2 ml-8">
-                    <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
-                        for="DuracionPrograma">
-                        Justificacion de la solicitud
-                        <span class="text-red-500">*</span>
-                    </label>
-                    <!-- <input
+                    <div class="px-8 mt-2 ml-8">
+                        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                            for="DuracionPrograma">
+                            Justificacion de la solicitud
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <!-- <input
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                         required autocomplete="off" id="DuracionPrograma" type="text"
                         placeholder="Duración del Programa en horas" /> -->
 
 
-                    <textarea name="" id=""
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
+                        <textarea name="" id=""
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            formControlName="justificacionSolicitud"></textarea>
 
+                    </div>
+
+
+                    <div class="px-6 pt-3 flex justify-end">
+                        <button
+                            class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                            <span class="mx-1" (click)="sendSolicitudTransporte()">Solicitar</span>
+                        </button>
+
+                    </div>
                 </div>
 
 
-                <div class="px-6 pt-3 flex justify-end">
-                    <button
-                        class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                        <span class="mx-1"
-                        (click)="sendSolicitudTransporte()"
-                        >Solicitar</span>
-                    </button>
 
-                </div>
+
+
             </div>
 
-
-
-
-
-        </div>
-
-    </form>
+        </form>
     </div>
 </div>

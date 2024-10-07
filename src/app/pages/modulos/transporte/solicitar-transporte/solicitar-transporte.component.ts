@@ -52,6 +52,7 @@ export default class SolicitarTransporteComponent {
       fechaSolicitud: new FormControl('', [Validators.required]),
       horaSalidaSolicitud: new FormControl('', [Validators.required]),
       horaRegresoSolicitud: new FormControl('', [Validators.required]),
+      cantidadPersonas: new FormControl('', [Validators.required]),
       destinoSolicitud: new FormControl('', [Validators.required]),
       justificacionSolicitud: new FormControl('', [Validators.required]),
 
