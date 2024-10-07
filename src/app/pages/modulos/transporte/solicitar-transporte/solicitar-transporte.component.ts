@@ -20,6 +20,7 @@ export default class SolicitarTransporteComponent {
 
   //Datos de la persona que solicita el transporte
   solicitanteObj = signal({ "nombre": "", "apellido": "", "cedula": "", "telefono": "", "correo": "" });
+  dialogRef: any;
 
   constructor(private  usuarioService: UsuariosService,) {
     this.getPersonaEncargado();
@@ -34,4 +35,5 @@ export default class SolicitarTransporteComponent {
     
   }
 
+ 
 }

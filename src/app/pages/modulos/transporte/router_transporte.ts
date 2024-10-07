@@ -17,7 +17,15 @@ export  const RouterTransporte: Routes = [
         title: 'Historial Transporte',
         loadComponent: () => import('./historial-transporte/historial-transporte.component')
     },
+<<<<<<< HEAD
+    {
+        path: 'solicitudes',
+        title: 'Solicitudes Transporte',
+        loadComponent: () => import('./solicitudes-transporte/solicitudes-transporte.component')
+    },
+=======
     
+>>>>>>> 3a1ae58d1a934c3668c8a8b4d868e31436c91f3d
 ];
 
 export default RouterTransporte;
