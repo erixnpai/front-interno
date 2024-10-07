@@ -36,49 +36,54 @@ export default class LoginComponent {
       SweetAlert.showerror("Todos los campos son obligatorios");
       return;
     }
-  
+
     try {
       const formLoginData = this.loginForm.value;
       const resp = await this.srv_login.loginUser(formLoginData).toPromise();
-  
+
       console.log(resp);
-  
+
       // Verificar si el acceso fue denegado
       if (!resp.acceso) {
+
         SweetAlert.showerror(resp.message || "Acceso denegado");
         return;
       }
-  
+
       // Verificar si la respuesta tiene un status negativo
       if (!resp.status) {
+
         SweetAlert.showerror(resp.message || "Error en la autenticación");
         return;
       }
-  
+
       // Si la autenticación es exitosa
       if (resp.auth) {
-        const user: any = Jwt_decoder.verificar_jwt(resp.t1);
-  
+        const user: any = Jwt_decoder.verificar_jwt(resp.tk1);
+
+
+
+
         // Verificar si el token decodificado contiene el usuario
-        if (!user || !user.Usser) {
+        if (!user || !user.payload.Usser) {
+
           SweetAlert.showerror("Usuario o contraseña incorrectos");
           return;
         }
-  
+
         // Guardar la sesión por 24 horas
         const sessionEndTime = Date.now() + 86400000; // 24 horas en milisegundos
         sessionStorage.setItem('sessionEndTime', sessionEndTime.toString());
-        sessionStorage.setItem("t1", resp.t1);
-  
+        sessionStorage.setItem("t1", resp.tk1);
+
         // Redirigir al usuario a la página de inicio
-        this.router.navigate(['/rally/']);
+        this.router.navigate(['modulos']);
       }
     } catch (error: any) {
-      // Manejo del error general
-      SweetAlert.showerror(error.message || "Error en el servidor. Intente nuevamente.");
+      SweetAlert.showerror(error.message || "Error inesperado al hacer la solicitud");
     }
   }
-  
+
 
   // clickModulos() {
   //   this.router.navigate(['/modulos']);
