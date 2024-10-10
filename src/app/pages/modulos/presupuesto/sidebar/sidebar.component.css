@@ -24,6 +24,7 @@
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden;
     height: 100vh; /* Altura total del viewport */
     margin: 0;
     padding: 0;
