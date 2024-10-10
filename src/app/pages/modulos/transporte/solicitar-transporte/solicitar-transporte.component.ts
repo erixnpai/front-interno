@@ -4,6 +4,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { SolicitudesService } from '../../../../Services/Transporte/Solicitudes-servs/solicitudes-service.service';
 import { CommonModule } from '@angular/common';
 import { Jwt_decoder } from '../../../../utils/Jwt';
+import { SweetAlert } from '../../../../utils/SweetAlert';
+import { utilClass } from '../../../../utils/util-class';
 
 
 
@@ -12,11 +14,12 @@ import { Jwt_decoder } from '../../../../utils/Jwt';
 @Component({
   selector: 'app-solicitar-transporte',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, ],
   templateUrl: './solicitar-transporte.component.html',
   styleUrl: './solicitar-transporte.component.css'
 })
 export default class SolicitarTransporteComponent {
+
 
   //Datos del encargado
   encargadoObj = signal<any>(null);
@@ -44,17 +47,24 @@ export default class SolicitarTransporteComponent {
       //Datos del encargado
       encargadoTransporte: new FormControl("", [Validators.required]),
       cargoEncargado: new FormControl("", [Validators.required]),
+      Id_encargado: new FormControl("", [Validators.required]),
       //Datos de la persona que solicita el transporte
       nombreSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
       cargoSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
+      Id_usuario: new FormControl("", [Validators.required]),
 
       //datos de la solicitud transporte
-      fechaSolicitud: new FormControl('', [Validators.required]),
-      horaSalidaSolicitud: new FormControl('', [Validators.required]),
-      horaRegresoSolicitud: new FormControl('', [Validators.required]),
-      cantidadPersonas: new FormControl('', [Validators.required]),
-      destinoSolicitud: new FormControl('', [Validators.required]),
-      justificacionSolicitud: new FormControl('', [Validators.required]),
+   
+      
+      Cantidad_personas: new FormControl('', [Validators.required]),
+      Lugar_salida: new FormControl('', [Validators.required]),
+      Lugar_regreso: new FormControl('', [Validators.required]),
+      Observacion: new FormControl('', [Validators.required]),
+      Fecha_solicitud: new FormControl('', [Validators.required]),
+      Hora_salida: new FormControl('', [Validators.required]),
+      Hora_regreso: new FormControl('', [Validators.required]),
+      Destino: new FormControl('', [Validators.required]),
+      Justificacion: new FormControl('', [Validators.required]),
 
     });
 
@@ -76,6 +86,7 @@ export default class SolicitarTransporteComponent {
 
     this.formSolicitarTransporte.get('encargadoTransporte')?.setValue(this.encargadoObj()?.Nombre);
     this.formSolicitarTransporte.get('cargoEncargado')?.setValue(this.encargadoObj()?.Cargo);
+    this.formSolicitarTransporte.get('Id_encargado')?.setValue(this.encargadoObj()?.Id);
 
     // console.log(data);
 
@@ -89,8 +100,18 @@ export default class SolicitarTransporteComponent {
 
   async sendSolicitudTransporte() {
     console.log(this.formSolicitarTransporte.value);
+
+    if (!this.formSolicitarTransporte.valid) {
+
+      SweetAlert.showerror("Todos los campos son obligatorios");
+      return;
+    }
+
+    const data = await this.transporteService.addSolicitud(this.formSolicitarTransporte.value).toPromise();
+    console.log(data);
+
+
     // const data = await this.transporteService.post_SendSolicitud(this.formSolicitarTransporte.value).toPromise();
-    // console.log(data);
   }
 
 

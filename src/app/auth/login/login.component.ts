@@ -9,7 +9,7 @@ import { Jwt_decoder } from '../../utils/Jwt';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, RouterOutlet, FormsModule, ReactiveFormsModule, ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

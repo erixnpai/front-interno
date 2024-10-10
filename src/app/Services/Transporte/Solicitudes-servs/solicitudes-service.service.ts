@@ -11,11 +11,12 @@ import { catchError } from 'rxjs';
 export class SolicitudesService {
   constructor(private error: ErrorService, private http: HttpClient) { }
 
-  private post_LoginUsuario = new Dictionary_Url().url_Login + new url_transporte().login;
+  
+  private post_addSolicitud = new Dictionary_Url().url_Transporte + new url_transporte().post_addSolicitud;
 
 
-  post_SendSolicitud(data: any) {
-    return this.http.post<any>(this.post_LoginUsuario, data)
+  addSolicitud(data: any) {
+    return this.http.post<any>(this.post_addSolicitud, data)
       .pipe(catchError(this.error.handleError));
   }
 }
