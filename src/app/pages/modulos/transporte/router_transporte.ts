@@ -17,6 +17,11 @@ export  const RouterTransporte: Routes = [
         title: 'Historial Transporte',
         loadComponent: () => import('./historial-transporte/historial-transporte.component')
     },
+    {
+        path: 'solicitudes',
+        title: 'Solicitudes de Transporte',
+        loadComponent: () => import('./solicitudes-transporte/solicitudes-transporte.component')
+    },
     
 ];
 
