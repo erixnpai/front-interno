@@ -39,7 +39,7 @@ export default class SolicitarTransporteComponent {
     const dataJwt: any = Jwt_decoder.decodifcar_jwt('t1');
     this.solicitanteObj.set(dataJwt.payload ?? null);
 
-    // console.log(this.encargadoObj());
+    // console.log(this.solicitanteObj());
 
 
 
@@ -51,7 +51,7 @@ export default class SolicitarTransporteComponent {
       //Datos de la persona que solicita el transporte
       nombreSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
       cargoSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
-      Id_usuario: new FormControl("", [Validators.required]),
+      Id_usuario: new FormControl(this.solicitanteObj()?.Id_Usuario ?? "", [Validators.required]),
 
       //datos de la solicitud transporte
    
@@ -59,7 +59,7 @@ export default class SolicitarTransporteComponent {
       Cantidad_personas: new FormControl('', [Validators.required]),
       Lugar_salida: new FormControl('', [Validators.required]),
       Lugar_regreso: new FormControl('', [Validators.required]),
-      Observacion: new FormControl('', [Validators.required]),
+      // Observacion: new FormControl('', [Validators.required]),
       Fecha_solicitud: new FormControl('', [Validators.required]),
       Hora_salida: new FormControl('', [Validators.required]),
       Hora_regreso: new FormControl('', [Validators.required]),

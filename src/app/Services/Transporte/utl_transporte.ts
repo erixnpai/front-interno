@@ -10,6 +10,8 @@ export class url_transporte{
 
 
     public post_addSolicitud: string = "/solicitudes/add-solicitud";
+    public post_findSolicitudUsuario: string = "/solicitudes/find-solicitud";
+    public get_Solicitud: string = "/solicitudes/";
 
     
 }

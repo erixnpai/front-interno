@@ -13,10 +13,21 @@ export class SolicitudesService {
 
   
   private post_addSolicitud = new Dictionary_Url().url_Transporte + new url_transporte().post_addSolicitud;
+  private post_findSolicitudUsuario = new Dictionary_Url().url_Transporte + new url_transporte().post_findSolicitudUsuario;
 
 
   addSolicitud(data: any) {
     return this.http.post<any>(this.post_addSolicitud, data)
       .pipe(catchError(this.error.handleError));
   }
+
+  findSolicitudUsuario(data: any) {
+    return this.http.post<any>(this.post_findSolicitudUsuario, data)
+      .pipe(catchError(this.error.handleError));
+  }
+
+
+
+
+
 }
