@@ -24,7 +24,7 @@
 </div>
 
 <mat-dialog-content>
-<form  class="mb-11">
+<form [formGroup]="formulario">
   <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
     <div class="px-8 mt-2 ml-8">
         <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
@@ -33,7 +33,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Nombre"
+          required id="nombre" autocomplete="off" formControlName="NoReferencia"
            type="text" placeholder="Nombre de la Edición">
         <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
           class="text-red-500 text-xs font-semibold">
@@ -47,7 +47,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Anio"
+          required id="nombre" autocomplete="off" formControlName="ConceptoNombre"
            type="text" placeholder="Año de la Edición">
       </div>
 
@@ -58,7 +58,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Nombre"
+          required id="nombre" autocomplete="off" formControlName="AnioAplicado"
            type="text" placeholder="Nombre de la Edición">
         <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
           class="text-red-500 text-xs font-semibold">
@@ -72,7 +72,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Anio"
+          required id="nombre" autocomplete="off" formControlName="MontoAsignadoOrigen"
            type="text" placeholder="Año de la Edición">
       </div>
 
@@ -83,7 +83,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Nombre"
+          required id="nombre" autocomplete="off" formControlName="MontoEjecutado"
            type="text" placeholder="Nombre de la Edición">
         <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
           class="text-red-500 text-xs font-semibold">
@@ -97,7 +97,7 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Anio"
+          required id="nombre" autocomplete="off" formControlName="PorcentajeUsado"
            type="text" placeholder="Año de la Edición">
       </div>
 
@@ -108,23 +108,14 @@
         </label>
         <input
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Nombre"
+          required id="nombre" autocomplete="off" formControlName="EstadoPresupuesto"
            type="text" placeholder="Nombre de la Edición">
         <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
           class="text-red-500 text-xs font-semibold">
           Debe ingresar el nombre de la Edición.
         </div> -->
       </div>
-    <div class="px-8 mt-2 mr-8">
-        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
-          Porcentaje usado
-          <span class="text-red-500">*</span>
-        </label>
-        <input
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-          required id="nombre" autocomplete="off" formControlName="Anio"
-           type="text" placeholder="Año de la Edición">
-      </div>
+    
   </div>
 </form>
 </mat-dialog-content>
