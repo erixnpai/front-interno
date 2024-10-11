@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
-    "@ng-select/ng-select": "^13.9.0",
+    "@ng-select/ng-select": "^13.9.1",
     "jwt-decode": "^4.0.0",
     "ngx-material-timepicker": "^13.1.1",
     "ngx-pagination": "^6.0.3",
