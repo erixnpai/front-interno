@@ -13,10 +13,29 @@ export class SolicitudesService {
 
   
   private post_addSolicitud = new Dictionary_Url().url_Transporte + new url_transporte().post_addSolicitud;
+  private get_findSolicitudUsuario = new Dictionary_Url().url_Transporte + new url_transporte().get_findSolicitudUsuario;
+  private get_allSolicitudesEjecucion = new Dictionary_Url().url_Transporte + new url_transporte().get_allSoliciudesEjecucion;
+  // private post_findSolicitudUsuario = new Dictionary_Url().url_Transporte + new url_transporte().post_findSolicitudUsuario;
 
 
-  addSolicitud(data: any) {
-    return this.http.post<any>(this.post_addSolicitud, data)
+  addSolicitud(obj: any) {
+    return this.http.post<any>(this.post_addSolicitud, obj)
       .pipe(catchError(this.error.handleError));
   }
+
+  findSolicitudUsuario(obj: any) {
+    return this.http.get<any>(this.get_findSolicitudUsuario + obj)
+      .pipe(catchError(this.error.handleError));
+  }
+
+
+  allSolicitudesEjecucion(obj: any) {
+    return this.http.get<any>(this.get_allSolicitudesEjecucion + obj)
+      .pipe(catchError(this.error.handleError));
+  }
+
+
+
+
+
 }

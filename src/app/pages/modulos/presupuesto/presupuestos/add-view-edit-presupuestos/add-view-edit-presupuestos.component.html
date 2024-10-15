@@ -1,0 +1,134 @@
+<div
+  class="bg-[#14173D] h-14 w-full flex items-center justify-between px-4 font-bold"
+>
+<div class=" text-white px-4 py-2 flex justify-between">
+  <h2 class="text-lg font-medium uppercase"> titulo_pagina </h2>
+</div>
+
+  <button (click)="cerraDialogo()" class="w-6 h-6 text-gray-400">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 text-2xl font-bold"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
+    </svg>
+  </button>
+</div>
+
+<mat-dialog-content>
+<form [formGroup]="formulario">
+  <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
+    <div class="px-8 mt-2 ml-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          N° Referencia
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="NoReferencia"
+           type="text" placeholder="Nombre de la Edición">
+        <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
+          class="text-red-500 text-xs font-semibold">
+          Debe ingresar el nombre de la Edición.
+        </div> -->
+      </div>
+    <div class="px-8 mt-2 mr-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Nombre del Concepto
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="ConceptoNombre"
+           type="text" placeholder="Año de la Edición">
+      </div>
+
+    <div class="px-8 mt-2 ml-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Año Aplicado
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="AnioAplicado"
+           type="text" placeholder="Nombre de la Edición">
+        <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
+          class="text-red-500 text-xs font-semibold">
+          Debe ingresar el nombre de la Edición.
+        </div> -->
+      </div>
+    <div class="px-8 mt-2 mr-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Monto Asignado
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="MontoAsignadoOrigen"
+           type="text" placeholder="Año de la Edición">
+      </div>
+
+    <div class="px-8 mt-2 ml-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Monto Ejecutado
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="MontoEjecutado"
+           type="text" placeholder="Nombre de la Edición">
+        <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
+          class="text-red-500 text-xs font-semibold">
+          Debe ingresar el nombre de la Edición.
+        </div> -->
+      </div>
+    <div class="px-8 mt-2 mr-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Porcentaje usado
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="PorcentajeUsado"
+           type="text" placeholder="Año de la Edición">
+      </div>
+
+    <div class="px-8 mt-2 ml-8">
+        <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2" for="nombre">
+          Estado presupuesto
+          <span class="text-red-500">*</span>
+        </label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+          required id="nombre" autocomplete="off" formControlName="EstadoPresupuesto"
+           type="text" placeholder="Nombre de la Edición">
+        <!-- <div *ngIf="formulario.controls['Nombre'].touched && formulario.controls['Nombre'].invalid"
+          class="text-red-500 text-xs font-semibold">
+          Debe ingresar el nombre de la Edición.
+        </div> -->
+      </div>
+    
+  </div>
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="flex justify-end items-end space-x-4">
+    
+    <!-- botón de guardar -->
+    <button
+      class="rounded bg-[#057F3F] px-4 pb-1.5 pt-1.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#0C5C00] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-green-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+      <span class="mx-0.5">Guardar</span>
+    </button>
+    
+  </div>
+
+</mat-dialog-actions>

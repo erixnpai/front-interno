@@ -10,11 +10,13 @@
     </h2>
 
     <div class="px-6 pt-3 flex justify-end flex-row">
+
+        @if (solicitud_activa()) {
         <p>
             Estado:
-            <span
-                class="rounded bg-blue-500 px-7 pb-3 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                En espera
+            <span [ngClass]="getStateClass()"
+                class="rounded  px-7 pb-3 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                {{state_solicitud()}}
                 <svg fill="#ffffff" width="1.9rem" height="2rem" viewBox="0 0 32 32" data-name="Layer 1" id="Layer_1"
                     xmlns="http://www.w3.org/2000/svg" class="ml-2 inline-block align-middle">
                     <title></title>
@@ -27,6 +29,8 @@
                 </svg>
             </span>
         </p>
+        }
+
     </div>
 
     <div>
@@ -102,7 +106,7 @@
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 required autocomplete="off" id="DuracionPrograma" type="date"
-                                formControlName="fechaSolicitud" />
+                                formControlName="Fecha_solicitud" />
 
 
                         </div>
@@ -116,8 +120,8 @@
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 required autocomplete="off" id="DuracionPrograma" type="number"
-                                formControlName="cantidadPersonas" />
-                           
+                                formControlName="Cantidad_personas" />
+
 
 
                         </div>
@@ -131,10 +135,10 @@
                             </label>
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                                required id="DuracionPrograma" type="time" formControlName="horaSalidaSolicitud" />
-                               
-                                  
-                                
+                                required id="DuracionPrograma" type="time" formControlName="Hora_salida" />
+
+
+
 
                         </div>
 
@@ -148,11 +152,11 @@
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                                 required autocomplete="off" id="DuracionPrograma" type="time"
-                                formControlName="horaRegresoSolicitud" />
+                                formControlName="Hora_regreso" />
 
                         </div>
 
-                       
+
 
 
 
@@ -172,16 +176,15 @@
                         placeholder="Duración del Programa en horas" /> -->
 
 
-                        <textarea name="" id=""
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                          ></textarea>
+                        <textarea name="" id="" formControlName="Lugar_salida"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
 
                     </div>
 
                     <div class="px-8 mt-2 ml-8">
                         <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                             for="DuracionPrograma">
-                           Lugar de regreso
+                            Lugar de regreso
                             <span class="text-red-500">*</span>
                         </label>
                         <!-- <input
@@ -190,9 +193,8 @@
                         placeholder="Duración del Programa en horas" /> -->
 
 
-                        <textarea name="" id=""
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            ></textarea>
+                        <textarea name="" id="" formControlName="Lugar_regreso"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "></textarea>
 
                     </div>
 
@@ -210,7 +212,7 @@
 
                         <textarea name="" id=""
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            formControlName="destinoSolicitud"></textarea>
+                            formControlName="Destino"></textarea>
 
                     </div>
 
@@ -229,14 +231,13 @@
 
                         <textarea name="" id=""
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            formControlName="justificacionSolicitud"></textarea>
+                            formControlName="Justificacion"></textarea>
 
                     </div>
 
 
                     <div class="px-6 pt-3 flex justify-end">
-                        <button
-                        (click)="sendSolicitudTransporte()"
+                        <button (click)="sendSolicitudTransporte()"
                             class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
                             <span class="mx-1">Solicitar</span>
                         </button>
