@@ -20,12 +20,12 @@ export  const RouterPresupuestos: Routes = [
     {
         path: 'ClgCuentas',
         title: 'Catalogos de Cuentas por Oficinas',
-        loadComponent: () => import('./asignacion/asignacion.component')
+        loadComponent: () => import('./catalogos-cuentas/catalogos-cuentas.component')
     },
     {
         path: 'Origenfondos',
         title: 'Origen de los Fondos',
-        loadComponent: () => import('./asignacion/asignacion.component')
+        loadComponent: () => import('./origenfondos/origenfondos.component')
     }
 
 ]
