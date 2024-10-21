@@ -24,6 +24,8 @@ export class SolicitudesService {
   }
 
   findSolicitudUsuario(obj: any) {
+    // console.log(this.get_findSolicitudUsuario + obj);
+    
     return this.http.get<any>(this.get_findSolicitudUsuario + obj)
       .pipe(catchError(this.error.handleError));
   }

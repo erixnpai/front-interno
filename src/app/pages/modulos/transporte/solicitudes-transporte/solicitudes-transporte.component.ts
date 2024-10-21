@@ -25,7 +25,7 @@ export default class SolicitudesTransporteComponent {
 
   async getAlllSolicitudesEjecucion() {
 
-    const data = await this.solicitudesService.allSolicitudesEjecucion(1).toPromise();
+    const data = await this.solicitudesService.allSolicitudesEjecucion(0).toPromise();
 
     console.log(data);
 
@@ -41,8 +41,9 @@ export default class SolicitudesTransporteComponent {
     });
 
 
-    this.socket.on('new-solicitud', () => {
-      console.log('Desconectado del servidor');
+    this.socket.on('new-solicitud', ( data:any) => {
+      console.log('conectado al servidor');
+      console.log(data);
     });
   }
 }
