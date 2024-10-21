@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { SolicitudesService } from '../../../../Services/Transporte/Solicitudes-servs/solicitudes-service.service';
 import { io, Socket } from 'socket.io-client';
@@ -16,6 +16,9 @@ export default class SolicitudesTransporteComponent {
   socket!: Socket;
 
 
+  solicitudesList = signal<any>([]);
+
+
   constructor(private readonly solicitudesService: SolicitudesService) {
     this.getAlllSolicitudesEjecucion()
     this.connectSocket();
@@ -28,6 +31,17 @@ export default class SolicitudesTransporteComponent {
     const data = await this.solicitudesService.allSolicitudesEjecucion(0).toPromise();
 
     console.log(data);
+
+    this.solicitudesList.set(data.data);
+
+  }
+
+  async changeStatusSolicitud( status: number) {
+    const data = await this.solicitudesService.updateStatusSolicitud(0).toPromise();
+
+    console.log(data);
+
+    this.solicitudesList.set(data.data);
 
   }
 
