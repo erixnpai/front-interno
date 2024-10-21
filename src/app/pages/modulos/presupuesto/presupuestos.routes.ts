@@ -10,7 +10,24 @@ export  const RouterPresupuestos: Routes = [
         path: 'Presupuestos',
         title: 'Presupuestos',
         loadComponent: () => import('./presupuestos/presupuesto.component')
+    },
+    {
+        path: 'Asignacion',
+        title: 'Asignacion del Presupuestos',
+        loadComponent: () => import('./asignacion/asignacion.component')
     }
+    ,
+    {
+        path: 'ClgCuentas',
+        title: 'Catalogos de Cuentas por Oficinas',
+        loadComponent: () => import('./catalogos-cuentas/catalogos-cuentas.component')
+    },
+    {
+        path: 'Origenfondos',
+        title: 'Origen de los Fondos',
+        loadComponent: () => import('./origenfondos/origenfondos.component')
+    }
+
 ]
 
 export default RouterPresupuestos;

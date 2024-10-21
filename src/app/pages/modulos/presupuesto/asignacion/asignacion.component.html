@@ -1,3 +1,5 @@
+
+
 <div class="max-w-screen-xl md:mx-4 lg-mx-auto mx-10 mt-10 ">
 
 	<div class="relative overflow-x-auto border-gray-50 shadow-md sm:rounded-lg">
@@ -25,6 +27,9 @@
 							#
 						</th>
 						<th scope="col" class="px-6 py-3">
+							Referencia
+						</th>
+						<th scope="col" class="px-6 py-3">
 							Concepto
 						</th>
 						<th scope="col" class="px-6 py-3">
@@ -34,40 +39,43 @@
 							Año Aplicado
 						</th>
 						<th scope="col" class="px-6 py-3">
-							Oficina
-						</th>
-						<th scope="col" class="px-6 py-3">
 							Acciones
 						</th>
 					</tr>
 				</thead>
 				<tbody>
-					@for (presupuesto of presupuestos; track $index) {
+					@for (asignacion of asignacion_presupuesto; track $index) {
 					<tr class="bg-white border-b hover:bg-gray-500 text-black whitespace-nowrap">
 						<th scope="row" class="px-6 py-4 font-medium">
 							{{ $index + 1 }}
 						</th>
 						<td class="px-6 py-4">
-							{{presupuesto.ConceptoNombre}}
+							{{asignacion.NoReferencia}}
 						</td>
 						<td class="px-6 py-4">
-							{{presupuesto.MontoAsignadoOrigen}}
+							{{asignacion.ConceptoNombre}}
 						</td>
 						<td class="px-6 py-4">
-							{{presupuesto.MontoAsignadoOrigen}}
+							{{asignacion.MontoAsignadoOrigen}}
 						</td>
 						<td class="px-6 py-4">
-							Contabiidad
+							{{asignacion.AnioAplicado}}
 						</td>
 						<td class="px-6 py-4 text-sm whitespace-nowrap">
-								<button (click)="AbrirDialogo(2, 0)" class="text-blue-500 mr-2">
+								<button 
+                                (click)="AbrirDialogo(2, 0)"
+                                class="text-blue-500 mr-2"
+                                >
 								  <mat-icon>remove_red_eye</mat-icon>
 								</button>
 			  
-								<button (click)="AbrirDialogo(3, 0)" class="text-green-500 mr-2">
-								  <mat-icon>edit</mat-icon>
-								 
+								<button 
+                                (click)="AbrirDialogo(3, 0)"
+                                 class="text-green-500 mr-2"                                 
+                                >
+								  <mat-icon>edit</mat-icon>								 
 								</button>
+
 								<button class="text-red-500 mr-2"  >
 								  <mat-icon>delete</mat-icon>
 								</button>
