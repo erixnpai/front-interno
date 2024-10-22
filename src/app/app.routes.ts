@@ -18,8 +18,8 @@ import { Routes } from '@angular/router';
         loadChildren:() => import("./pages/modulos/transporte/router_transporte")
     },
     {
-        path: 'dashboard',
-        title: 'Dashboard',
+        path: 'Presupuesto',
+        title: 'Presupuesto',
         loadComponent: () => import('./pages/modulos/presupuesto/sidebar/sidebar.component'),
         loadChildren:() => import("./pages/modulos/presupuesto/presupuestos.routes")
     },
