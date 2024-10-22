@@ -1,91 +1,115 @@
 <!-- component -->
-<section class="relative min-h-screen flex  justify-center py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover  items-center"
-	style="background-image: url(assets/layout.png);">
+<section
+    class="relative min-h-screen flex  justify-center py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover  items-center"
+    style="background-image: url(assets/layout.png);">
     <div class="absolute top-5 left-5 h-10 w-44 ml-0 mt-0">
         <img src="assets/logocnu.png" alt="Banner" />
     </div>
-        <!-- CONTENT GOES HERE -->
-        <div class="flex flex-col h-full w-full mx-auto ">
-            <section class="flex flex-col mx-auto bg-transparent rounded-lg p-6 shadow-md space-y-6 w-full">
-                <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <form class="flex flex-col relative md:col-span-3">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
-                        </div>
-                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-100 rounded bg-gray-50" placeholder="Search here..." required />
-                        <button type="submit" class="text-blue-500 absolute end-2.5 top-1.5 border border-blue-500 hover:bg-blue-50 focus:outline-none font-medium rounded text-base px-4 py-2">Search</button>
-                    </form>
-                    <div class="col-span-1 flex items-center">
-                        <button class="relative  px-4 py-2 rounded w-80 items-center justify-center bg-blue-500 text-white font-medium hover:bg-primary-900">
-                            New facilityss  
-                        </button>
+    <!-- CONTENT GOES HERE -->
+    <div class="flex flex-col h-full w-full mx-auto ">
+        <div class="p-4">
+            <div class="relative flex">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-grip"></i>
+                </div>
+                <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5" placeholder="Buscar Modulos...">
+                <button type="submit" class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <section class="flex flex-col mx-auto bg-transparent rounded-lg p-6 shadow-md space-y-6 w-full">
+            
+            
+            <h1 class="text-white text-lg text-center align-baseline inline-flex px-4 py-3 mr-auto items-center text-[.95rem] leading-none text-primary bg-[#a2b2c850] rounded-lg">
+                Modulo Presupuesto</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
+                
+                <div routerLink="/Presupuesto" class="relative cursor-pointer bg-white flex-col mt-2  px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-cash-register"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Presupuesto</div>
                     </div>
                 </div>
                 
-                
-                <h1 class="text-white text-lg">Presupuesto</h1>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
-                    <!-- In use -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden" (click)="moveToModul()">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-blue-500">21</div>
-                            <div class="text-lg font-medium text-blue-500">In useD</div>
-                        </div>
+                <div class="relative cursor-pointer bg-white flex-col mt-2  px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-cash-register"></i>
                     </div>
-                    <!-- renovation -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-amber-500">17</div>
-                            <div class="text-lg font-medium text-amber-600">Under renovation</div>
-                        </div>
-                    </div>
-                    <!-- Suspended -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-red-500">24</div>
-                            <div class="text-lg font-medium text-red-600">Suspended</div>
-                        </div>
-                    </div>
-                    <!-- Closed -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-primary-900">38</div>
-                            <div class="text-lg font-medium text-primary-900">Closed</div>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="text-white text-lg">Contabilidad</h1>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
-                    <!-- In use -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-blue-500">21</div>
-                            <div class="text-lg font-medium text-blue-500">In use</div>
-                        </div>
-                    </div>
-                    <!-- renovation -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden" >
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-amber-500">17</div>
-                            <div class="text-lg font-medium text-amber-600">Under renovation</div>
-                        </div>
-                    </div>
-                    <!-- Suspended -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-red-500">24</div>
-                            <div class="text-lg font-medium text-red-600">Suspended</div>
-                        </div>
-                    </div>
-                    <!-- Closed -->
-                    <div class="flex flex-col px-6 py-2 bg-white shadow rounded-lg overflow-hidden">
-                        <div class="flex flex-col items-center space-y-2">
-                            <div class="text-6xl font-bold tracking-tight leading-none text-primary-900">38</div>
-                            <div class="text-lg font-medium text-primary-900">Closed</div>
-                        </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
                     </div>
                 </div>
                 
-            </section>
-        </div>            
+                <div class="relative cursor-pointer bg-white flex-col mt-2  px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-cash-register"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <!-- <div class="text-6xl font-bold tracking-tight leading-none text-blue-500">Modulos de prueba</div> -->
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
+                    </div>
+                </div>
+                
+                <div class="relative cursor-pointer bg-white flex-col mt-2  px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-cash-register"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <!-- <div class="text-6xl font-bold tracking-tight leading-none text-blue-500">Modulos de prueba</div> -->
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
+                    </div>
+                </div>
+                
+
+            </div>
+            <h1 class="text-white text-lg text-center align-baseline inline-flex px-4 py-3 mr-auto items-center text-[.95rem] leading-none text-primary bg-[#a2b2c850] rounded-lg">
+                Modulo Transporte</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
+                
+                <div routerLink="/Transporte" class="relative cursor-pointer bg-white flex-col mt-2 px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Transporte</div>
+                    </div>
+                </div>
+                
+                <div class="relative bg-white flex-col mt-2 px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
+                    </div>
+                </div>
+                
+                <div class="relative bg-white flex-col mt-2 px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
+                    </div>
+                </div>
+                
+                <div class="relative bg-white flex-col mt-2 px-6 py-2 shadow rounded-lg">
+                    <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-[#204ab0] left-4 -top-6">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div class="flex flex-col items-center p-5">
+                        <div class="text-lg font-medium text-blue-500">Modulos de prueba</div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </section>
+    </div>
 </section>
