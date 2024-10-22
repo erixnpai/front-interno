@@ -43,7 +43,7 @@
 
         <div class="flex flex-wrap bg-white lg:justify-between justify-center gap-y-4">
 
-          <div class="w- mx-auto mb-6">
+          <!-- <div class="w- mx-auto mb-6">
             <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
                 <div class="p-2 bg-gray-500 rounded-sm w-32 h-32">
@@ -91,7 +91,7 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
           @for (solicitud of solicitudesList(); track $index) {
 
 
@@ -148,6 +148,8 @@
               </div>
             </div>
           </div>
+          } @empty {
+            
           }
         </div>
 
