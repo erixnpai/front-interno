@@ -7,6 +7,7 @@ import { Jwt_decoder } from '../../../../utils/Jwt';
 import { SweetAlert } from '../../../../utils/SweetAlert';
 import { utilClass } from '../../../../utils/util-class';
 import { io, Socket } from 'socket.io-client';
+import { toast } from 'ngx-sonner';
 
 
 
@@ -30,7 +31,7 @@ export default class SolicitarTransporteComponent {
 
 
   //Datos de la persona que solicita el transporte
-  solicitanteObj = signal<any>(null);
+  jwtSolicitanteObj = signal<any>(null);
 
 
   //Estado de la solicitud
@@ -52,9 +53,9 @@ export default class SolicitarTransporteComponent {
     this.getPersonaEncargado();
 
     const dataJwt: any = Jwt_decoder.decodifcar_jwt('t1');
-    this.solicitanteObj.set(dataJwt.payload ?? null);
+    this.jwtSolicitanteObj.set(dataJwt.payload );
 
-    // console.log(this.solicitanteObj());
+    // console.log(this.jwtSolicitanteObj());
 
 
 
@@ -64,9 +65,9 @@ export default class SolicitarTransporteComponent {
       cargoEncargado: new FormControl("", [Validators.required]),
       Id_encargado: new FormControl("", [Validators.required]),
       //Datos de la persona que solicita el transporte
-      nombreSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
-      cargoSolicitante: new FormControl(this.solicitanteObj()?.Usser ?? "", [Validators.required]),
-      Id_usuario: new FormControl(this.solicitanteObj()?.Id_Usuario ?? "", [Validators.required]),
+      nombreSolicitante: new FormControl(this.jwtSolicitanteObj()?.Usser ?? "", [Validators.required]),
+      cargoSolicitante: new FormControl(this.jwtSolicitanteObj()?.Usser ?? "", [Validators.required]),
+      Id_usuario: new FormControl(this.jwtSolicitanteObj()?.Id_Usuario ?? "", [Validators.required]),
 
       //datos de la solicitud transporte
 
@@ -119,7 +120,7 @@ export default class SolicitarTransporteComponent {
 
   async getSolicitudPersona() {
 
-    const response = await this.transporteService.findSolicitudUsuario(this.solicitanteObj()?.Id_Usuario).toPromise();
+    const response = await this.transporteService.findSolicitudUsuario(this.jwtSolicitanteObj()?.Id_Usuario).toPromise();
 
     this.formSolicitarTransporte.get('encargadoTransporte')?.disable();
     this.formSolicitarTransporte.get('cargoEncargado')?.disable();
@@ -159,11 +160,21 @@ export default class SolicitarTransporteComponent {
 
 
   async connectSocket() {
-    this.socket = io('http://localhost:4221/transportews');
+    this.socket = io('http://localhost:4221/transportews', {
+      query:{
+        token: sessionStorage.getItem('t1')
+      }
+    });
 
     this.socket.on('connect', () => {
       console.log('Conectado al servidor');
     });
+
+
+    this.socket.on("update-solicitud", (data: any) => {
+      
+    });
+    
 
   }
 
@@ -183,17 +194,23 @@ export default class SolicitarTransporteComponent {
 
     if (!this.formSolicitarTransporte.valid) {
 
-      SweetAlert.showerror("Todos los campos son obligatorios");
+      // SweetAlert.showerror("Todos los campos son obligatorios");
+
+      toast.error('Todos los campos son obligatorios', {style:{ backgroundColor: 'yellow'}});
       return;
     }
 
     // return
     const data = await this.transporteService.addSolicitud(this.formSolicitarTransporte.value).toPromise();
+
+    
     console.log(data);
 
-    // if (data) {
-    //   this.socket.emit('solicitud', data);
-    // }
+    if (data.status == 1) {
+      toast.success('Solicitud enviada con exito');
+
+      this.getSolicitudPersona()
+    }
 
 
     // const data = await this.transporteService.post_SendSolicitud(this.formSolicitarTransporte.value).toPromise();

@@ -43,7 +43,7 @@
 
         <div class="flex flex-wrap bg-white lg:justify-between justify-center gap-y-4">
 
-          <div class="w- mx-auto mb-6">
+          <!-- <div class="w- mx-auto mb-6">
             <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
               <div class="flex items-center space-x-4">
                 <div class="p-2 bg-gray-500 rounded-sm w-32 h-32">
@@ -91,7 +91,7 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
           @for (solicitud of solicitudesList(); track $index) {
 
 
@@ -116,7 +116,7 @@
 
                     <div
                       class="bg-[#F8F839] text-center  px-2 shadow-lg text-white text-md font-semibold rounded-full inline-block">
-                      Solicitud en espera</div>
+                      {{solicitud.Id_estatus_nombre }}</div>
                     <div
                       class="bg-white p-2 rounded-full shadow-xl text-sm flex items-center justify-center w-auto h-auto ">
                       <mat-icon class="text-blue-400">visibility</mat-icon>
@@ -138,16 +138,20 @@
               </div>
               <div class="flex justify-end">
                 <button
+              
                   class="text-white bg-[#212049] uppercase font-extralight  text-sm py-1 px-2 rounded-full transition duration-300 ease-in-out">
                   Aprobar Solicitud
                 </button>
                 <button
+                (click)="rechazarSolicitud(solicitud.Id)"
                   class="text-white bg-red-500 uppercase font-extralight  text-sm py-1 px-2 rounded-full transition duration-300 ease-in-out">
                  Rechazar Solicitud
                 </button>
               </div>
             </div>
           </div>
+          } @empty {
+            
           }
         </div>
 
