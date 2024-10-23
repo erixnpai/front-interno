@@ -5,6 +5,8 @@ import { io, Socket } from 'socket.io-client';
 import { Jwt_decoder } from '../../../../utils/Jwt';
 import { JwtPayload } from 'jwt-decode';
 import { toast } from 'ngx-sonner';
+import { MatDialog } from '@angular/material/dialog';
+import { RechazarSolicitudComponent } from './rechazar-solicitud/rechazar-solicitud.component';
 
 @Component({
   selector: 'app-solicitudes-transporte',
@@ -24,7 +26,7 @@ export default class SolicitudesTransporteComponent {
   solicitudesList = signal<any>([]);
 
 
-  constructor(private readonly solicitudesService: SolicitudesService) {
+  constructor(private readonly solicitudesService: SolicitudesService, private readonly dialog: MatDialog) {
     this.getAlllSolicitudesEjecucion()
     this.connectSocket();
 
@@ -44,27 +46,42 @@ export default class SolicitudesTransporteComponent {
     const data = await this.solicitudesService.allSolicitudesEjecucion(0).toPromise();
 
     if (data.data == 0) {
-      data.data= [];
+      data.data = [];
     }
     this.solicitudesList.set(data.data);
 
     console.log(this.solicitudesList());
-    
+
 
   }
 
   async changeStatusSolicitud(status: number) {
     let data = await this.solicitudesService.updateStatusSolicitud(0).toPromise();
 
-    
+
     if (data.data == 0) {
-      data.data= [];
+      data.data = [];
     }
-    
+
     console.log(data.data);
     this.solicitudesList.set(data.data);
 
   }
+
+
+  rechazarSolicitud(Id: any) {
+
+    const dialogRef = this.dialog.open(RechazarSolicitudComponent, {
+      width: '500px',
+
+    });
+
+  }
+
+
+
+
+
 
 
 
