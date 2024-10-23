@@ -172,6 +172,7 @@ export default class SolicitarTransporteComponent {
 
 
     this.socket.on("update-solicitud", (data: any) => {
+      console.log("data recibida para la actualizacion de la solicitud", data);
       
     });
     
