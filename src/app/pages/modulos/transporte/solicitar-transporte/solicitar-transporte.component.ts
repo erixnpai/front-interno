@@ -7,6 +7,7 @@ import { Jwt_decoder } from '../../../../utils/Jwt';
 import { SweetAlert } from '../../../../utils/SweetAlert';
 import { utilClass } from '../../../../utils/util-class';
 import { io, Socket } from 'socket.io-client';
+import { toast } from 'ngx-sonner';
 
 
 
@@ -193,17 +194,23 @@ export default class SolicitarTransporteComponent {
 
     if (!this.formSolicitarTransporte.valid) {
 
-      SweetAlert.showerror("Todos los campos son obligatorios");
+      // SweetAlert.showerror("Todos los campos son obligatorios");
+
+      toast.error('Todos los campos son obligatorios', {style:{ backgroundColor: 'yellow'}});
       return;
     }
 
     // return
     const data = await this.transporteService.addSolicitud(this.formSolicitarTransporte.value).toPromise();
+
+    
     console.log(data);
 
-    // if (data) {
-    //   this.socket.emit('solicitud', data);
-    // }
+    if (data.status == 1) {
+      toast.success('Solicitud enviada con exito');
+
+      this.getSolicitudPersona()
+    }
 
 
     // const data = await this.transporteService.post_SendSolicitud(this.formSolicitarTransporte.value).toPromise();

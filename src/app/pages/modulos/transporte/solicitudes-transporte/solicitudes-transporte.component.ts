@@ -4,6 +4,7 @@ import { SolicitudesService } from '../../../../Services/Transporte/Solicitudes-
 import { io, Socket } from 'socket.io-client';
 import { Jwt_decoder } from '../../../../utils/Jwt';
 import { JwtPayload } from 'jwt-decode';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-solicitudes-transporte',
@@ -47,6 +48,9 @@ export default class SolicitudesTransporteComponent {
     }
     this.solicitudesList.set(data.data);
 
+    console.log(this.solicitudesList());
+    
+
   }
 
   async changeStatusSolicitud(status: number) {
@@ -80,7 +84,13 @@ export default class SolicitudesTransporteComponent {
 
     this.socket.on('new-solicitud', (data: any) => {
       console.log('conectado al servidor');
+
+      const sound = new Audio('assets/sounds/notify.mp3');
+
+      sound.play()
       console.log(data);
+
+      toast.info('Nueva solicitud de transporte')
 
       this.getAlllSolicitudesEjecucion()
     });
