@@ -1,10 +1,9 @@
 
 
-<div class="max-w-screen-xl md:mx-4 lg-mx-auto mx-10 mt-10 ">
+<div class="h-screen-xl overflow-hidden md:px-8 xl:px-8 px-8">
 
-	<div class="relative overflow-x-auto border-gray-50 shadow-md sm:rounded-lg">
-		<div class="p-4 flex items-center justify-between">
-			<label for="table-search" class="sr-only">Search</label>
+	<div class="mt-8 p-5 overflow-y-auto md:px-8 xl:px-8 px-8 shadow-md bg-white/10 sm:rounded-lg">
+		<div class="p-4 gap-2 flex items-center justify-between">
 			<div class="relative mt-1">
 				<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 					<svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20"
@@ -16,12 +15,12 @@
 				</div>
 				<input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5 " placeholder="Buscar">
         </div>
-        <button (click)="AbrirDialogo(1, 0)" class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+        <button (click)="AbrirDialogo(1, 0)" class="rounded bg-[#349fe8] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
             Agregar
         </button>
 			</div>
 			<table class="w-full text-sm text-left text-gray-50">
-				<thead class="text-xs text-white uppercase bg-[#14173D] ">
+				<thead class="text-xs text-white uppercase bg-gradient-to-br from-[#020659] to-[#204ab0] ">
 					<tr>
 						<th scope="col" class="p-4">
 							#
@@ -45,7 +44,7 @@
 				</thead>
 				<tbody>
 					@for (asignacion of asignacion_presupuesto; track $index) {
-					<tr class="bg-white border-b hover:bg-gray-500 text-black whitespace-nowrap">
+					<tr class="bg-white border-b hover:bg-[#f4f6ffbd] text-black whitespace-nowrap">
 						<th scope="row" class="px-6 py-4 font-medium">
 							{{ $index + 1 }}
 						</th>
