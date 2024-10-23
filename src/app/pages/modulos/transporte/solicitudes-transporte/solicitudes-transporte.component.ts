@@ -73,8 +73,19 @@ export default class SolicitudesTransporteComponent {
 
     const dialogRef = this.dialog.open(RechazarSolicitudComponent, {
       width: '500px',
+      data:{
+        Id: Id
+      }
 
     });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      // console.log('El diálogo se cerró con resultado:', result);
+      // if (result?.reload == true) {
+      //   this.CargarEdicionPersona();
+      // }
+    });
+   
 
   }
 
@@ -97,6 +108,15 @@ export default class SolicitudesTransporteComponent {
     this.socket.on('connect', () => {
       console.log('Conectado al servidor');
     });
+
+    // this.socket.on('get-id', (data: any) => {
+
+    //   console.log(data, "para respuesta ");
+      
+    // })
+
+
+    
 
 
     this.socket.on('new-solicitud', (data: any) => {

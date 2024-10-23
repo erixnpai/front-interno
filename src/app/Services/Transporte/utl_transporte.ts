@@ -3,6 +3,7 @@ export class url_transporte{
    
     public post_addSolicitud: string = "/solicitudes/add-solicitud";
     public get_findSolicitudUsuario: string = "/solicitudes/find-solicitud-usuario/";
+    public update_Solicitud : string = "/solicitudes/update-solicitud/";
     public update_statusSolicitud : string = "/solicitudes/update-status-solicitud";
 
 

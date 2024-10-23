@@ -15,6 +15,7 @@ export class SolicitudesService {
   private post_addSolicitud = new Dictionary_Url().url_Transporte + new url_transporte().post_addSolicitud;
   private get_findSolicitudUsuario = new Dictionary_Url().url_Transporte + new url_transporte().get_findSolicitudUsuario;
   private get_allSolicitudesEjecucion = new Dictionary_Url().url_Transporte + new url_transporte().get_allSoliciudesEjecucion;
+  private update_Solicitud = new Dictionary_Url().url_Transporte + new url_transporte().update_Solicitud;
   private update_statusSolicitud = new Dictionary_Url().url_Transporte + new url_transporte().update_statusSolicitud;
   // private post_findSolicitudUsuario = new Dictionary_Url().url_Transporte + new url_transporte().post_findSolicitudUsuario;
 
@@ -31,6 +32,10 @@ export class SolicitudesService {
       .pipe(catchError(this.error.handleError));
   }
 
+  updateSolicitud(id: number, obj: any) {
+    return this.http.patch<any>(this.update_Solicitud+ id, obj)
+      .pipe(catchError(this.error.handleError));
+  }
   updateStatusSolicitud(obj: any) {
     return this.http.post<any>(this.update_statusSolicitud, obj)
       .pipe(catchError(this.error.handleError));
