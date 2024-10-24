@@ -1,9 +1,17 @@
 
 
 <div class="h-screen-xl overflow-hidden md:px-8 xl:px-8 px-8">
+   
+  <div
+    class="mt-8 p-5 overflow-y-auto md:px-8 xl:px-8 px-8 shadow-md bg-white/10 sm:rounded-lg"
+  >
+    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg text-white">
+      SOLICITAR TRANSPORTE
+    </h2>
+
     <div class="px-6 pt-3 flex justify-end flex-row">
         @if (solicitud_activa()) {
-        <p>
+        <p class="text-white text-lg mr-1">
           Estado:
           <span
             [ngClass]="getStateClass()"
@@ -38,19 +46,13 @@
         </p>
         }
       </div>
-  <div
-    class="mt-8 p-5 overflow-y-auto md:px-8 xl:px-8 px-8 shadow-md bg-white/10 sm:rounded-lg"
-  >
-    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg text-white">
-      SOLICITAR TRANSPORTE
-    </h2>
 
     <div class="bg-white rounded-lg">
       <form [formGroup]="formSolicitarTransporte">
         <div class="relative sm:rounded-lg">
           <div class="pb-5">
             <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
-              <!-- <div class="px-8 mt-2 ml-8">
+              <div class="px-8 mt-2 ml-8">
                 <label
                   class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                   for="DuracionPrograma"
@@ -67,9 +69,9 @@
                   formControlName="encargadoTransporte"
                   placeholder="Nombre de a quien va dirigido"
                 />
-              </div> -->
+              </div>
 
-              <!-- <div class="px-8 mt-2 ml-8">
+              <div class="px-8 mt-2 ml-8">
                 <label
                   class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                   for="DuracionPrograma"
@@ -86,9 +88,9 @@
                   formControlName="cargoEncargado"
                   placeholder="Cargo del solicitado"
                 />
-              </div> -->
+              </div>
 
-              <!-- <div class="px-8 mt-2 ml-8">
+              <div class="px-8 mt-2 ml-8">
                 <label
                   class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                   for="DuracionPrograma"
@@ -105,9 +107,9 @@
                   formControlName="nombreSolicitante"
                   placeholder="Nombre del solicitante"
                 />
-              </div> -->
+              </div>
 
-              <!-- <div class="px-8 mt-2 ml-8">
+              <div class="px-8 mt-2 ml-8">
                 <label
                   class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                   for="DuracionPrograma"
@@ -124,7 +126,7 @@
                   formControlName="cargoSolicitante"
                   placeholder="Cargo del solicitante"
                 />
-              </div> -->
+              </div>
             </div>
 
             <div class="grid grid-cols-1 gap-2 mt-4 md:grid-cols-2 space-y-2">
