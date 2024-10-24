@@ -40,6 +40,7 @@ export default class SolicitarTransporteComponent {
   solicitud_activa = signal(false);
   color_solicitud = signal(1);
   status_solicitud = signal(0);
+  observacion_activa = signal(false);
 
 
 
@@ -150,6 +151,15 @@ export default class SolicitarTransporteComponent {
         this.formSolicitarTransporte.disable();
       }
 
+      if (response.data.Observacion != null) {
+
+        this.observacion_activa.set(true);
+        this.formSolicitarTransporte.addControl('Observacion', new FormControl(response.data.Observacion, [Validators.required]));
+
+        this.formSolicitarTransporte.get('Observacion')?.disable();
+        
+      }
+
 
 
     }
@@ -161,7 +171,7 @@ export default class SolicitarTransporteComponent {
 
   async connectSocket() {
     this.socket = io('http://localhost:4221/transportews', {
-      query:{
+      auth:{
         token: sessionStorage.getItem('t1')
       }
     });
@@ -173,6 +183,8 @@ export default class SolicitarTransporteComponent {
 
     this.socket.on("update-solicitud", (data: any) => {
       console.log("data recibida para la actualizacion de la solicitud", data);
+
+      this.getSolicitudPersona();
       
     });
     
