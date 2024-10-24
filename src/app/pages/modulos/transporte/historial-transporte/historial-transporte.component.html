@@ -1,79 +1,90 @@
-<div class="p-6 bg-white border border-gray-200 rounded-lg shadow ">
-    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg font-bold">
+
+<div class="h-screen-xl overflow-hidden md:px-8 xl:px-8 px-8">
+
+	<div class="mt-8 p-5 overflow-y-auto md:px-8 xl:px-8 px-8 shadow-md bg-white/10 sm:rounded-lg">
+    <h2 class="border-l-[8px] border-blue-500 p-1 pl-2 text-lg  text-white">
       HISTORIAL TRANSPORTE
     </h2>
-    <button></button>
 
-    <div>
-        <div class="relative shadow-md sm:rounded-lg">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center justify-between pb-2">
-                    <div class="relative mt-4 md:mt-0">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="w-5 h-5 text-[#A9A9A9]" viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"></path>
-                            </svg>
-                        </span>
-                        <input type="text"
-                            class="w-full py-2 pl-10 pr-4  bg-white border border-[#A9A9A9] rounded-lg  dark:text-black focus:border-[#0F2167] focus:outline-none"
-                            placeholder="Buscar">
-                    </div>
-                </div>
-            </div>
-            <!-- tabla------------------------------------------------------------ -->
-            <div class="max-h-[500px] overflow-y-auto scrollbar-hide">
-                <div class="flex flex-col mt-6 divide-y overflow-hidden border border-gray-200 dark:border-gray-700 rounded-lg  ">
-                    <div class="overflow-y-auto scrollbar-hide" style="max-height: 500px; ">
-                        <table class="min-w-full  ">
-                            <thead class="bg-[#001E53] sticky top-0 text-white text-[14px] md:text-lg uppercase font-medium text-left rtl:text-right">
-                                <tr>
-                                  <th class="px-4 py-4">#</th>
-                                  <th class="px-4 py-4">Nombre del Solicitante</th>
-                                  <th class="px-4 py-4">Nombre del Solicitado</th>
-                                  <th class="px-4 py-4">Cargo del solicitante</th>
-                                  <th class="px-4 py-4">Fecha</th>
-                                  <th class="px-4 py-4">Hora de salida</th>
-                                  <th class="px-4 py-4">Estado</th>
-                                </tr>
-                              </thead>
-                            <tbody class="bg-white divide-y divide-gray-900">
-
-                                <tr class="font-bold uppercase text-gray-800 text-[12px] md:text-xl">
-                                  <td class="px-4">
-                                    <div class="">1</div>
-                                  </td>
-                                  <td class="px-4">
-                                    <div class="px-3 py-1 text-[12px] md:text-lg rounded-full text-white bg-[#001E53]">Ing. Benito Morales</div>
-                                  </td>
-                                  <td class="px-4">
-                                    <div>Ing. Jorge Cruz Parralez</div>
-                                  </td>
-                                  <td class="px-4">
-                                    <div>Dgt</div>
-                                  </td>
-                                  <td class="px-4">
-                                    <div>14/08/2024</div>
-                                  </td>
-                                  <td class="px-4">
-                                    <div>10:00 pm</div>
-                                  </td>
-                                  <td class="px-4 py-4 ">
-                                    <button (click)="openDialog()" class="w-full h-8 bg-[#BABFB8] text-[#212049] rounded-lg">
-                                        Hecha
-                                    </button>
-                                  </td>
-                                </tr>
-
-                            </tbody>
-                          </table>
-                    
-                    </div>
-                  </div>
-            </div>
+		<div class="p-4 gap-2 flex items-center justify-between">
+			<label for="table-search" class="sr-only">Search</label>
+			<div class="relative mt-1">
+				<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+					<svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd"
+							d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</div>
+				<input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5 " placeholder="Buscar">
         </div>
-    </div>
-</div>
+        <button class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+            Agregar
+        </button>
+			</div>
+			<table class="w-full text-sm text-left text-gray-50">
+				<thead class="text-xs text-white uppercase bg-gradient-to-br from-[#020659] to-[#204ab0]">
+					<tr>
+						<th scope="col" class="p-4">
+							#
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Nombre del Solicitante
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Nombre del Solicitado
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Cargo del solicitante
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Fecha
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Hora de salida
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Estado
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- @for (ctas_catalogos of catalogos_ctas; track $index) { -->
+					<tr class="bg-white border-b hover:bg-[#f4f6ffbd] text-black whitespace-nowrap">
+						<th scope="row" class="px-6 py-4 font-medium">
+							1
+						</th>
+            <td class="px-4">
+              <div class="px-3 rounded-full text-white bg-gradient-to-br from-[#020659] to-[#204ab0]">Ing. Benito Morales</div>
+            </td>
+						<td class="px-6 py-4">
+							Ing. Jorge Cruz Parralez
+						</td>
+             <td class="px-6 py-4">
+							Dgt
+						</td>
+						<td class="px-6 py-4">
+							14/08/2024
+						</td>
+						<td class="px-6 py-4">
+							10:00 pm
+						</td>
+						<td>
+              <button type="button" class="relative inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <mat-icon class="text-sm"> done_outline</mat-icon>
+                <span class="sr-only">Notifications</span>
+                Hecha
+                </button>
+                
+            </td>
+					
+					</tr>
+				<!-- } -->
+				</tbody>
+			</table>
+		</div>
 
+		
+	
+	</div>
