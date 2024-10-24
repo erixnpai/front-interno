@@ -99,7 +99,7 @@ export default class SolicitudesTransporteComponent {
 
   async connectSocket() {
     this.socket = io('http://localhost:4221/transportews', {
-      query: {
+      auth: {
         token: sessionStorage.getItem('t1')
       }
     });

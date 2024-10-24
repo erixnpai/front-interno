@@ -40,6 +40,7 @@ export default class SolicitarTransporteComponent {
   solicitud_activa = signal(false);
   color_solicitud = signal(1);
   status_solicitud = signal(0);
+  observacion_activa = signal(false);
 
 
 
@@ -53,7 +54,7 @@ export default class SolicitarTransporteComponent {
     this.getPersonaEncargado();
 
     const dataJwt: any = Jwt_decoder.decodifcar_jwt('t1');
-    this.jwtSolicitanteObj.set(dataJwt.payload );
+    this.jwtSolicitanteObj.set(dataJwt.payload);
 
     // console.log(this.jwtSolicitanteObj());
 
@@ -132,22 +133,37 @@ export default class SolicitarTransporteComponent {
     console.log(response.data);
     if (response.data != "0") {
 
+      response.data.Fecha_solicitud = response.data.Fecha_solicitud.split('T')[0];
+
       this.solicitud_activa.set(true);
 
       this.solicitud_activa_nombre.set(response.data.Id_estatus_nombre);
       this.color_solicitud.set(response.data.Id_estatus);
       this.status_solicitud.set(response.data.Id_estatus);
 
+
+
       this.formSolicitarTransporte.patchValue(response.data);
 
+      this.formSolicitarTransporte.addControl('Id', new FormControl(response.data.Id, [Validators.required]));
 
 
 
-      console.log(this.status_solicitud());
+
+      // console.log(this.status_solicitud());
 
 
       if (response.data.Id_estatus == 1 || response.data.Id_estatus == 2) {
         this.formSolicitarTransporte.disable();
+      }
+
+      if (response.data.Observacion != null) {
+
+        this.observacion_activa.set(true);
+        this.formSolicitarTransporte.addControl('Observacion', new FormControl(response.data.Observacion, [Validators.required]));
+
+        this.formSolicitarTransporte.get('Observacion')?.disable();
+
       }
 
 
@@ -161,7 +177,7 @@ export default class SolicitarTransporteComponent {
 
   async connectSocket() {
     this.socket = io('http://localhost:4221/transportews', {
-      query:{
+      auth: {
         token: sessionStorage.getItem('t1')
       }
     });
@@ -171,39 +187,61 @@ export default class SolicitarTransporteComponent {
     });
 
 
-    this.socket.on("update-solicitud", (data: any) => {
-      
+    this.socket.on("update-solicitud", (dataResponse: any) => {
+      // console.log("data recibida para la actualizacion de la solicitud", data);
+      const sound = new Audio('assets/sounds/notify.mp3');
+
+      if (dataResponse.data.Id_estatus == 3) {
+        toast.warning('Solicitud rechazada');
+      }
+      if (dataResponse.data.Id_estatus == 2) {
+        toast.success('Solicitud aceptada');
+
+      }
+
+      sound.play()
+
+      this.getSolicitudPersona();
+
     });
-    
+
 
   }
 
 
 
   async sendSolicitudTransporte() {
-    console.log(this.formSolicitarTransporte.value);
-
-    // if (this.solicitud_activa() == true) {
-    //   SweetAlert.showerror("Ya tienes una solicitud activa");
-    //   return
-
-    // }else {
-    //   SweetAlert.showerror("creando solicitud ");
-    //   return
-    // }
-
+   
     if (!this.formSolicitarTransporte.valid) {
 
       // SweetAlert.showerror("Todos los campos son obligatorios");
 
-      toast.error('Todos los campos son obligatorios', {style:{ backgroundColor: 'yellow'}});
+      toast.error('Todos los campos son obligatorios', { style: { backgroundColor: 'yellow' } });
       return;
+    }
+
+
+    if (this.solicitud_activa()) {
+      const idSolicitud = this.formSolicitarTransporte.get('Id')?.value;
+      // return
+      const data = await this.transporteService.updateSolicitud(idSolicitud, this.formSolicitarTransporte.value).toPromise();
+
+
+      console.log(data);
+
+      if (data.status == 1) {
+        toast.success('Solicitud actualizada con exito');
+
+        this.getSolicitudPersona()
+        return
+      }
+      return
     }
 
     // return
     const data = await this.transporteService.addSolicitud(this.formSolicitarTransporte.value).toPromise();
 
-    
+
     console.log(data);
 
     if (data.status == 1) {
@@ -211,9 +249,8 @@ export default class SolicitarTransporteComponent {
 
       this.getSolicitudPersona()
     }
+    return
 
-
-    // const data = await this.transporteService.post_SendSolicitud(this.formSolicitarTransporte.value).toPromise();
   }
 
 
