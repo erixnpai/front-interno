@@ -30,6 +30,7 @@ export class PresupuestoServices {
   post_CuentasNombre = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().post_CuentasNombre;
   post_PresupuestoMaestro = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().post_PresupuestoMaestro;
   post_PresupuestoEstad = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().post_PresupuestoEstad;
+  post_PresupuestoApertura = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().post_PresupuestoApertu;
 
   // Rutas Get y Dell
   getDell_PresupuestoHistorial = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().getDell_PresupuestoHistorial;
@@ -48,11 +49,13 @@ export class PresupuestoServices {
   getDell_CuentasNombre = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().getDell_CuentasNombre;
   getDell_PresupuestoMaestro = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().getDell_PresupuestoMaestro;
   getDell_PresupuestoEstad = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().getDell_PresupuestoEstad;
+  getDell_PresupuestoApertura = new Dictionary_Url().path_presupuesto + new Urls_Presupuesto().getDell_PresupuestoApertu;
   //
 
   constructor(private http: HttpClient, private error: ErrorService) { }
 
   // Peticiones ADD     ,obj_full  pasa a   ,obj_full 
+  //falta los servios de add y delete de presupuestoApertura
   add_PresupuestoHistorial(obj_full: any): Observable<any[]> {
     return this.http.post<any>(this.post_PresupuestoHistorial, obj_full)
       .pipe(retry(1), catchError(this.error.handleError));

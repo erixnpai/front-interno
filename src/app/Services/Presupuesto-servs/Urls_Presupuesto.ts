@@ -16,6 +16,7 @@ export class Urls_Presupuesto {
     public post_CuentasNombre: string = "/CuentasNombre/add";
     public post_PresupuestoMaestro: string = "/PresupuestoMaestro/add";
     public post_PresupuestoEstad: string = "/PresupuestoEstad/add";
+    public post_PresupuestoApertu: string = "/PresupuestoApertura/add";
 
     // Rutas Get y Delete 
     public getDell_PresupuestoHistorial: string = "/PresupuestoHistorial/";
@@ -34,4 +35,5 @@ export class Urls_Presupuesto {
     public getDell_CuentasNombre: string = "/CuentasNombre/";
     public getDell_PresupuestoMaestro: string = "/PresupuestoMaestro/";
     public getDell_PresupuestoEstad: string = "/PresupuestoEstad/";
+    public getDell_PresupuestoApertu: string = "/PresupuestoApertura/";
 }
