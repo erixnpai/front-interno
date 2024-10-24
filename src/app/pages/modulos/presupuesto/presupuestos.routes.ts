@@ -26,6 +26,11 @@ export  const RouterPresupuestos: Routes = [
         path: 'Origenfondos',
         title: 'Origen de los Fondos',
         loadComponent: () => import('./origenfondos/origenfondos.component')
+    },
+    {
+        path: 'Apertura',
+        title: 'Apertura de Presupuestos',
+        loadComponent: () => import('./apertura-presupuesto/apertura-presupuesto.component')
     }
 
 ]
