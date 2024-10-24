@@ -1,62 +1,87 @@
-<div class="main-app h-screen md:flex ">
-    <aside class="main-sidebard relative overflow-hidden z-10 bg-blue-500">
-      <!-- class="rounded-full bg-white w-[9rem] h-[9rem] flex justify-center items-center" -->
-      <a
-        routerLink="/modulos"
-      >
-      <!-- <img class="w-[17rem] mt-12" src="../../../assets/modRecurso 1.png" alt="" /> -->
-      </a>
-  
-      <h1 class="text-center text-[#349fe8] mt-12 font-medium text-4xl"></h1>
-      <H2 class="text-lg text-center text-white font-medium uppercase">Modulo de Transporte</H2>
-  
-      <div class="w-full">
-     
-        <ul class="mt-6 ml-4 leading-10">
-          <li class="relative group group">
-          <a class="inline-flex items-center font-medium text-white transition-transform duration-150 cursor-pointer hover:scale-110" 
-          routerLink="solicitar">
-              <mat-icon>laptop_car</mat-icon>
-              <span class="ml-4 uppercase">Solicitar Transporte</span>
-          </a>
-          <div class="absolute bottom-0 left-0 w-0 bg-blue-500 h-1 transition-all duration-500 group-hover:w-full"></div>
-        </li>       
-          <li class="relative group group">
-          <a class="inline-flex items-center font-medium text-white transition-transform duration-150 cursor-pointer hover:scale-110" 
-          routerLink="historial">
-              <mat-icon>laptop_car</mat-icon>
-              <span class="ml-4 uppercase">Historial Transporte</span>
-          </a>
-          <div class="absolute bottom-0 left-0 w-0 bg-blue-500 h-1 transition-all duration-500 group-hover:w-full"></div>
-        </li>       
-          <li class="relative group group">
-          <a class="inline-flex items-center font-medium text-white transition-transform duration-150 cursor-pointer hover:scale-110" 
-          routerLink="solicitudes">
-              <mat-icon>laptop_car</mat-icon>
-              <span class="ml-4 uppercase">Solicitudes Transporte</span>
-          </a>
-          <div class="absolute bottom-0 left-0 w-0 bg-blue-500 h-1 transition-all duration-500 group-hover:w-full"></div>
-        </li>       
-        
-  </ul>
-      </div>
 
-  
-  
-      <div class="absolute pl-8 bottom-0 left-0 w-full mb-6 group">
-        <button class="inline-flex items-center font-medium text-white transition-transform duration-150 cursor-pointer hover:scale-110 hover:text-[#A9A9A9]" (click)="cerrarSesion()" >
-          <mat-icon>exit_to_app</mat-icon>
-          <span class="ml-2">CERRAR SESIÓN</span>
+
+  <aside class="flex h-screen overflow-hidden text-xs">
+    <nav class="h-full flex flex-col bg-gradient-to-b from-[#020659] to-[#204ab0] shadow-sm">
+      <div class="p-4 pb-2 flex justify-between items-center">
+        <img
+        routerLink="vacio"
+          src="assets/logocnu.png"
+          class="overflow-hidden text-xs transition-all"
+          [ngClass]="expanded ? 'w-52' : 'w-0'"
+          alt=""
+        />
+        <button (click)="toggleSidebar()" class="p-2 rounded-full bg-gray-50 hover:bg-gray-100">
+          <ng-container *ngIf="expanded; else collapsed">
+            <i class="fa-solid fa-chevron-left"></i>
+          </ng-container>
+          <ng-template #collapsed>
+            <i class="fa-solid fa-chevron-right"></i>
+          </ng-template>
         </button>
       </div>
+
+      <ul class="flex-1 z-10">
+
+        <div class="text-xs font-medium mt-6 text-[#F4F6FF]">
+          <h1 class="px-2 pt-2 pb-2">Menú</h1>
+        </div>
+
+        <li
+          routerLink="solicitar"
+          [ngClass]="expanded ? '' : ''"
+           class="relative group cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white hover:text-gray-800 border-l-4 border-transparent hover:border-[#fde63D] pr-6">         
+              <span class="inline-flex justify-center items-center ml-4">
+                <mat-icon>directions_bus</mat-icon>
+              </span>
+              <span class="overflow-hidden text-sm font-medium transition-all" [ngClass]="expanded ? 'w-52 ml-3' : 'w-0'">Solicitar Transporte</span>
+              <div *ngIf="!expanded" class="absolute left-full rounded-md px-2 py-1 ml-2 bg-indigo-100 text-indigo-800 text-xs invisible opacity-0 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0">
+                Solicitar Transporte
+              </div>
+        </li>
+
+        <li
+          routerLink="historial"
+          [ngClass]="expanded ? '' : ''"
+           class="relative group cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white hover:text-gray-800 border-l-4 border-transparent hover:border-[#fde63D] pr-6">         
+              <span class="inline-flex justify-center items-center ml-4">
+                <mat-icon>history</mat-icon>
+              </span>
+              <span class="overflow-hidden text-sm font-medium transition-all" [ngClass]="expanded ? 'w-52 ml-3' : 'w-0'">Historial Transporte</span>
+              <div *ngIf="!expanded" class="absolute left-full rounded-md px-2 py-1 ml-2 bg-indigo-100 text-indigo-800 text-xs invisible opacity-0 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0">
+                Historial Transporte
+              </div>
+        </li>   
+
+        <li
+          routerLink="solicitudes"
+          [ngClass]="expanded ? '' : ''"
+           class="relative group cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white hover:text-gray-800 border-l-4 border-transparent hover:border-[#fde63D] pr-6">         
+              <span class="inline-flex justify-center items-center ml-4">
+                <mat-icon>assignment</mat-icon>
+              </span>
+              <span class="overflow-hidden text-sm font-medium transition-all" [ngClass]="expanded ? 'w-52 ml-3' : 'w-0'">Solicitudes Transporte</span>
+              <div *ngIf="!expanded" class="absolute left-full rounded-md px-2 py-1 ml-2 bg-indigo-100 text-indigo-800 text-xs invisible opacity-0 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0">
+                Solicitudes Transporte
+              </div>
+        </li>               
+      </ul>
+      
   
-        <div class="absolute -bottom-24 -left-20 w-40 h-40 ring-8 ring-[#12569D] ring-opacity-20 rounded-full z-[-1]"></div>
-        <div class="absolute -bottom-20 -left-20 w-40 h-40 ring-8 ring-[#339BE4] ring-opacity-20 rounded-full z-[-1]"></div>
-        <div class="absolute -top-24 -right-8 w-40 h-40 ring-8 ring-[#12569D] ring-opacity-20 rounded-full z-[-1]"></div>
-        <div class="absolute -top-16 -right-6 w-40 h-40 ring-8 ring-[#339BE4] ring-opacity-20 rounded-full z-[-1]"></div>
-  
-    </aside>
-    <main class="main-dash3">
+      <a routerLink="" class="border-t flex p-3 justify-center">
+        <mat-icon class="text-white">exit_to_app</mat-icon>
+        <div
+          class="flex justify-between items-center overflow-hidden text-xs transition-all"
+          [ngClass]="expanded ? 'w-52 ml-3' : 'w-0'"
+        >
+          <div class="leading-4">
+            <h4 class="font-medium text-white">Cerrar Sesión</h4>
+            <!-- <span class="text-xs text-gray-600">johndoegmail.com</span> -->
+          </div>
+          <!-- <app-more-vertical size="20"></app-more-vertical> -->
+        </div>
+        </a>
+    </nav>  
+    <main class="bg-vacio flex-1 ">
       <router-outlet></router-outlet>
     </main>
-  </div>
+  </aside>
