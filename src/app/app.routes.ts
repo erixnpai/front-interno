@@ -12,13 +12,13 @@ import { Routes } from '@angular/router';
         loadComponent: () => import('./pages/moduls/moduls.component')
     },
     {
-        path: 'Transporte',
+        path: 'transporte',
         title: 'Transporte',
         loadComponent: () => import('./pages/modulos/transporte/transporte-layout/transporte-layout.component'),
         loadChildren:() => import("./pages/modulos/transporte/router_transporte")
     },
     {
-        path: 'Presupuesto',
+        path: 'presupuesto',
         title: 'Presupuesto',
         loadComponent: () => import('./pages/modulos/presupuesto/sidebar/sidebar.component'),
         loadChildren:() => import("./pages/modulos/presupuesto/presupuestos.routes")
